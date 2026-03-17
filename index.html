@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AESTAS | Luxus Parfüm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <div class="logo">AESTAS</div>
+        <nav class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#about">Über uns</a>
+            <a href="#newsletter">Newsletter</a>
+        </nav>
+        <button class="cart-btn">Warenkorb <span id="cart-count">0</span></button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <p class="eyebrow">Luxury Fragrance House</p>
+        <h1>Duft, der bleibt.</h1>
+        <p class="hero-text">Zeitlose Parfums für Menschen mit Präsenz.</p>
+        <div class="hero-buttons">
+            <a href="#shop" class="btn primary">Jetzt entdecken</a>
+            <a href="#shop" class="btn secondary">Bestseller ansehen</a>
+        </div>
+    </div>
+</section>
+
+<section class="products-section" id="shop">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-label">Kollektion</p>
+            <h2>Unsere Düfte</h2>
+            <p>Moderne Luxus-Parfüms für einen bleibenden Eindruck.</p>
+        </div>
+
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="bottle">
+                        <div class="cap"></div>
+                        <div class="label">AESTAS</div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    <p class="family">{{ product.family }}</p>
+                    <div class="product-bottom">
+                        <span class="price">{{ product.price }}€</span>
+                        <button class="add-btn" onclick="addToCart()">In den Warenkorb</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-label">Why AESTAS</p>
+            <h2>Mehr als ein Duft</h2>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Exklusive Kompositionen</h3>
+                <p>Charakterstarke Duftnoten mit luxuriöser Wirkung.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Modernes Design</h3>
+                <p>Premium-Optik mit klarem, elegantem Stil.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Bleibende Präsenz</h3>
+                <p>Düfte für Menschen, die auffallen, ohne laut zu sein.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-section" id="newsletter">
+    <div class="container newsletter-box">
+        <div>
+            <p class="section-label">Newsletter</p>
+            <h2>Bleib nah an AESTAS</h2>
+            <p>Neue Düfte, limitierte Editionen und exklusive Drops.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="newsletterSubmit(event)">
+            <input type="email" placeholder="Deine E-Mail-Adresse" required>
+            <button type="submit" class="btn primary">Anmelden</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div>
+            <div class="logo footer-logo">AESTAS</div>
+            <p>Luxus Parfüm mit Charakter.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">Kontakt</a>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
