@@ -1,123 +1,3417 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AESTAS | Luxus Parfüm</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="holidaily-api-base" content="https://holidaily-pools.up.railway.app/api">
+  <title>Holidaily pools | Pools für Garten, Familie und Zuhause</title>
+  <meta
+    name="description"
+    content="Holidaily pools verkauft hochwertige Pools mit persönlicher Beratung, direktem Kontakt und passenden Lösungen für Garten, Familie und Zuhause."
+  >
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script>
+    document.documentElement.classList.add("has-motion");
+  </script>
+  <link rel="stylesheet" href="styles.css?v=20260401-2">
 </head>
-<body>
+  <body>
+  <div class="page-shell">
+    <header class="site-header motion-reveal motion-down is-visible" style="--delay: 80ms;">
+      <a class="brand" href="#top" aria-label="Holidaily pools Startseite">
+        <img
+          class="brand-mark"
+          src="assets/logo.svg"
+          alt=""
+          width="1600"
+          height="965"
+          decoding="async"
+        >
+        <span class="sr-only">Holidaily pools Startseite</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#modelle">Modelle</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
 
-<header class="header">
-    <div class="container nav">
-        <div class="logo">AESTAS</div>
-        <nav class="nav-links">
-            <a href="#shop">Shop</a>
-            <a href="#about">Über uns</a>
-            <a href="#newsletter">Newsletter</a>
-        </nav>
-        <button class="cart-btn">Warenkorb <span id="cart-count">0</span></button>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="container hero-content">
-        <p class="eyebrow">Luxury Fragrance House</p>
-        <h1>Duft, der bleibt.</h1>
-        <p class="hero-text">Zeitlose Parfums für Menschen mit Präsenz.</p>
-        <div class="hero-buttons">
-            <a href="#shop" class="btn primary">Jetzt entdecken</a>
-            <a href="#shop" class="btn secondary">Bestseller ansehen</a>
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy motion-reveal motion-up is-visible" style="--delay: 120ms;">
+          <div class="hero-chip-row" aria-label="Leistungen im Überblick">
+            <span>Persönliche Planung</span>
+            <span>Direkter Kontakt</span>
+            <span>Moderne Gartenpools</span>
+          </div>
+          <p class="eyebrow" data-admin-key="hero-eyebrow" data-admin-label="Hero Kicker" data-admin-group="Hero">Pools für Zuhause</p>
+          <h1 data-admin-key="hero-title" data-admin-label="Hero Titel" data-admin-group="Hero">Dein eigener Pool beginnt mit der richtigen Beratung.</h1>
+          <p class="hero-text" data-admin-key="hero-text" data-admin-label="Hero Beschreibung" data-admin-group="Hero">
+            Holidaily pools begleitet dich von der ersten Idee bis zur passenden Pool-Lösung. Für Familien,
+            private Gärten und alle, die Qualität, Optik und direkte Ansprechpartner wollen.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#modelle">Modelle ansehen</a>
+            <a class="button button-secondary" href="#kontakt">Kostenlose Beratung</a>
+          </div>
+          <div class="hero-stats">
+            <article>
+              <strong>30 Jahre</strong>
+              <span>Garantie auf die Struktur</span>
+            </article>
+            <article>
+              <strong>139.000+</strong>
+              <span>zufriedene Kunden in Europa</span>
+            </article>
+            <article>
+              <strong>57</strong>
+              <span>Poolmodelle zur Auswahl.</span>
+            </article>
+          </div>
         </div>
-    </div>
-</section>
 
-<section class="products-section" id="shop">
-    <div class="container">
-        <div class="section-head">
-            <p class="section-label">Kollektion</p>
-            <h2>Unsere Düfte</h2>
-            <p>Moderne Luxus-Parfüms für einen bleibenden Eindruck.</p>
+        <div class="hero-visual motion-reveal motion-right is-visible" aria-hidden="true" style="--delay: 220ms;">
+          <div class="hero-visual-backdrop">
+            <span class="hero-orb hero-orb-one"></span>
+            <span class="hero-orb hero-orb-two"></span>
+            <span class="hero-grid-line hero-grid-line-one"></span>
+            <span class="hero-grid-line hero-grid-line-two"></span>
+          </div>
+          <div class="hero-card hero-card-large floating-card">
+            <div class="hero-card-media">
+              <img
+                src="assets/hero-pool-showcase.webp"
+                alt="Zwei Personen entspannen sich an einem modernen Holidaily Pool"
+                data-admin-key="hero-showcase-image"
+                data-admin-type="image"
+                data-admin-label="Hero Bild"
+                data-admin-group="Hero"
+              >
+            </div>
+            <span class="card-tag">Beliebt</span>
+            <h2 data-admin-key="hero-card-title" data-admin-label="Hero Karten Titel" data-admin-group="Hero">Einbaupool für den Familiengarten</h2>
+            <p data-admin-key="hero-card-text" data-admin-label="Hero Karten Text" data-admin-group="Hero">Klares Design, langlebige Technik und eine Lösung, die sauber in dein Grundstück integriert wird.</p>
+            <ul class="hero-card-list">
+              <li>Saubere Linienführung im Garten</li>
+              <li>Technik und Ausstattung passend zum Alltag</li>
+            </ul>
+          </div>
+          <div class="hero-card hero-card-small hero-card-sand floating-card">
+            <span class="card-tag">Kompakt</span>
+            <p>Mini Pools und kleinere Formate für begrenzte Flächen mit maximalem Nutzen.</p>
+          </div>
+          <div class="hero-card hero-card-small hero-card-sage floating-card">
+            <span class="card-tag">Komplett</span>
+            <p>Beratung, Auswahl, Zubehör und direkter Kontakt an einem Ort.</p>
+          </div>
+          <div class="hero-detail-strip floating-card">
+            <article>
+              <strong>01</strong>
+              <span>Idee und Bedarf klären</span>
+            </article>
+            <article>
+              <strong>02</strong>
+              <span>Pool und Technik abstimmen</span>
+            </article>
+            <article>
+              <strong>03</strong>
+              <span>Sauber in den Garten integrieren</span>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="product-grid">
-            {% for product in products %}
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="bottle">
-                        <div class="cap"></div>
-                        <div class="label">AESTAS</div>
-                    </div>
+      <section class="trust-band section section-tight motion-reveal motion-up" data-reveal style="--delay: 40ms;">
+        <p data-admin-key="trust-band-text" data-admin-label="Trust Band Text" data-admin-group="Vorteile">Persönliche Pool-Beratung aus Korschenbroich mit direktem Draht für Planung, Auswahl und schnelle Rückfragen.</p>
+        <div class="trust-points" aria-label="Leistungen">
+          <span>Vor Ort in Korschenbroich</span>
+          <span>E-Mail und WhatsApp</span>
+          <span>Klare Empfehlungen statt Standardangebote</span>
+        </div>
+      </section>
+
+      <section class="section split-section" id="vorteile">
+        <div class="section-heading motion-reveal motion-up" data-reveal>
+          <p class="eyebrow">Warum Holidaily pools</p>
+          <h2 data-admin-key="benefits-title" data-admin-label="Vorteile Titel" data-admin-group="Vorteile">Poolkauf ohne Umwege und ohne unklare Angebote.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card motion-reveal motion-up" data-reveal style="--delay: 0ms;">
+            <span>01</span>
+            <h3 data-admin-key="benefit-1-title" data-admin-label="Vorteil 1 Titel" data-admin-group="Vorteile">Persönliche Beratung</h3>
+            <p data-admin-key="benefit-1-text" data-admin-label="Vorteil 1 Text" data-admin-group="Vorteile">Du bekommst eine greifbare Empfehlung für Größe, Ausstattung und Technik statt allgemeiner Verkaufsfloskeln.</p>
+          </article>
+          <article class="feature-card motion-reveal motion-up" data-reveal style="--delay: 120ms;">
+            <span>02</span>
+            <h3 data-admin-key="benefit-2-title" data-admin-label="Vorteil 2 Titel" data-admin-group="Vorteile">Passende Pool-Lösungen</h3>
+            <p data-admin-key="benefit-2-text" data-admin-label="Vorteil 2 Text" data-admin-group="Vorteile">Ob Familienpool, kompakter Gartenpool oder Wellnessbereich: die Auswahl richtet sich nach deinem Zuhause.</p>
+          </article>
+          <article class="feature-card motion-reveal motion-up" data-reveal style="--delay: 240ms;">
+            <span>03</span>
+            <h3 data-admin-key="benefit-3-title" data-admin-label="Vorteil 3 Titel" data-admin-group="Vorteile">Direkte Erreichbarkeit</h3>
+            <p data-admin-key="benefit-3-text" data-admin-label="Vorteil 3 Text" data-admin-group="Vorteile">Fragen zu Becken, Technik, Termin oder Budget klärst du direkt per E-Mail, WhatsApp oder im Gespräch vor Ort.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section offers-section" id="modelle">
+        <div class="section-heading motion-reveal motion-up" data-reveal>
+          <p class="eyebrow">Unsere Lösungen</p>
+          <h2 data-admin-key="offers-title" data-admin-label="Modelle Titel" data-admin-group="Modelle">Vier Poolrichtungen für unterschiedliche Anforderungen.</h2>
+        </div>
+        <div class="offer-grid">
+          <article
+            class="offer-card motion-reveal motion-up"
+            data-reveal
+            data-model-id="classic-pool"
+            data-model-name="Classic Pool"
+            style="--delay: 0ms;"
+          >
+            <p class="offer-label">Classic Pool</p>
+            <h3 data-admin-key="offer-1-title" data-admin-label="Modell 1 Titel" data-admin-group="Modelle">Der klassische Einbaupool für den Garten</h3>
+            <p data-admin-key="offer-1-text" data-admin-label="Modell 1 Text" data-admin-group="Modelle">Ideal für Familien und alle, die eine dauerhafte, hochwertige Pool-Lösung suchen.</p>
+            <ul>
+              <li>Saubere Integration in die Außenfläche</li>
+              <li>Flexible Größen und Ausstattungen</li>
+              <li>Geeignet für regelmäßige Nutzung im Alltag</li>
+            </ul>
+            <div class="offer-card-actions">
+              <button class="button button-ghost button-small model-save-button" type="button" data-model-id="classic-pool">
+                Modell merken
+              </button>
+            </div>
+          </article>
+          <article
+            class="offer-card offer-card-highlight motion-reveal motion-up"
+            data-reveal
+            data-model-id="family-pool"
+            data-model-name="Family Pool"
+            style="--delay: 120ms;"
+          >
+            <p class="offer-label">Family Pool</p>
+            <h3 data-admin-key="offer-2-title" data-admin-label="Modell 2 Titel" data-admin-group="Modelle">Mehr Platz, mehr Komfort, mehr gemeinsame Zeit</h3>
+            <p data-admin-key="offer-2-text" data-admin-label="Modell 2 Text" data-admin-group="Modelle">Pool-Lösungen mit Fokus auf Sicherheit, Komfort und sinnvolle Nutzung für Familiengärten.</p>
+            <ul>
+              <li>Für private Gärten mit hohem Nutzwert</li>
+              <li>Optionen für Abdeckung, Einstieg und Technik</li>
+              <li>Beratung passend zu Nutzung und Budget</li>
+            </ul>
+            <div class="offer-card-actions">
+              <button class="button button-ghost button-small model-save-button" type="button" data-model-id="family-pool">
+                Modell merken
+              </button>
+            </div>
+          </article>
+          <article
+            class="offer-card motion-reveal motion-up"
+            data-reveal
+            data-model-id="mini-pool"
+            data-model-name="Mini Pool"
+            style="--delay: 240ms;"
+          >
+            <p class="offer-label">Mini Pool</p>
+            <h3 data-admin-key="offer-3-title" data-admin-label="Modell 3 Titel" data-admin-group="Modelle">Starke Wirkung auf kleinerer Fläche</h3>
+            <p data-admin-key="offer-3-text" data-admin-label="Modell 3 Text" data-admin-group="Modelle">Kompakte Pools für moderne Gärten, Innenhöfe oder Projekte mit wenig Platz.</p>
+            <ul>
+              <li>Ideal bei begrenzter Gartenfläche</li>
+              <li>Reduzierte Optik mit klarem Design</li>
+              <li>Schneller zur passenden Lösung</li>
+            </ul>
+            <div class="offer-card-actions">
+              <button class="button button-ghost button-small model-save-button" type="button" data-model-id="mini-pool">
+                Modell merken
+              </button>
+            </div>
+          </article>
+          <article
+            class="offer-card motion-reveal motion-up"
+            data-reveal
+            data-model-id="design-pool"
+            data-model-name="Design Pool"
+            style="--delay: 360ms;"
+          >
+            <div class="offer-card-media">
+              <img
+                src="assets/pool-model-design.webp"
+                alt="Rechteckiger Design Pool mit Holzterrasse aus der Vogelperspektive"
+                loading="lazy"
+                data-admin-key="offer-4-image"
+                data-admin-type="image"
+                data-admin-label="Modell 4 Bild"
+                data-admin-group="Modelle"
+              >
+            </div>
+            <p class="offer-label">Design Pool</p>
+            <h3 data-admin-key="offer-4-title" data-admin-label="Modell 4 Titel" data-admin-group="Modelle">Klare Linien für moderne Terrassen und ruhige Gartenbilder</h3>
+            <p data-admin-key="offer-4-text" data-admin-label="Modell 4 Text" data-admin-group="Modelle">Für Projekte, bei denen Pool, Terrasse und Architektur als ein stimmiges Gesamtbild wirken sollen.</p>
+            <ul>
+              <li>Geradlinige Form für moderne Außenbereiche</li>
+              <li>Starkes Gesamtbild mit Stein oder Holzdeck</li>
+              <li>Wirkt hochwertig auch bei kompakter Fläche</li>
+            </ul>
+            <div class="offer-card-actions">
+              <button class="button button-ghost button-small model-save-button" type="button" data-model-id="design-pool">
+                Modell merken
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section spotlight-section">
+        <div class="spotlight-panel motion-reveal motion-up" data-reveal>
+          <div class="spotlight-intro">
+            <p class="eyebrow">Was wir mitdenken</p>
+            <h2>Ein guter Pool ist mehr als nur ein Becken im Garten.</h2>
+            <div class="spotlight-metrics">
+              <article>
+                <strong>Fläche</strong>
+                <span>sauber analysiert</span>
+              </article>
+              <article>
+                <strong>Technik</strong>
+                <span>sinnvoll abgestimmt</span>
+              </article>
+              <article>
+                <strong>Optik</strong>
+                <span>als Teil des Gartens gedacht</span>
+              </article>
+            </div>
+          </div>
+          <div class="spotlight-list">
+            <article>
+              <strong>Planung</strong>
+              <span>Wir schauen auf Fläche, Nutzung, Wege, Einbindung und das Gesamtbild im Garten.</span>
+            </article>
+            <article>
+              <strong>Technik</strong>
+              <span>Filter, Abdeckung, Einstieg und Ausstattung werden passend zum Projekt mitgedacht.</span>
+            </article>
+            <article>
+              <strong>Beratung</strong>
+              <span>Du erreichst einen echten Ansprechpartner direkt und bekommst konkrete Antworten statt Standardtexte.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stories-section" id="referenzen">
+        <div class="section-heading motion-reveal motion-up" data-reveal>
+          <p class="eyebrow">Kundenstimmen</p>
+          <h2 data-admin-key="stories-title" data-admin-label="Referenzen Titel" data-admin-group="Referenzen">So fühlt sich ein klar begleiteter Poolkauf an.</h2>
+        </div>
+        <div class="story-grid">
+          <article class="story-card motion-reveal motion-up" data-reveal style="--delay: 0ms;">
+            <p data-admin-key="story-1-text" data-admin-label="Referenz 1 Text" data-admin-group="Referenzen">
+              "Wir hatten direkt das Gefühl, nicht einfach etwas verkauft zu bekommen, sondern die für uns passende
+              Pool-Lösung empfohlen zu bekommen."
+            </p>
+            <strong data-admin-key="story-1-name" data-admin-label="Referenz 1 Name" data-admin-group="Referenzen">Privatkunden, Familiengarten</strong>
+          </article>
+          <article class="story-card motion-reveal motion-up" data-reveal style="--delay: 120ms;">
+            <p data-admin-key="story-2-text" data-admin-label="Referenz 2 Text" data-admin-group="Referenzen">
+              "Die Beratung war klar, schnell und persönlich. Fragen zu Technik und Budget wurden direkt beantwortet."
+            </p>
+            <strong data-admin-key="story-2-name" data-admin-label="Referenz 2 Name" data-admin-group="Referenzen">Kundenprojekt, Mini Pool</strong>
+          </article>
+          <article class="story-card motion-reveal motion-up" data-reveal style="--delay: 240ms;">
+            <p data-admin-key="story-3-text" data-admin-label="Referenz 3 Text" data-admin-group="Referenzen">
+              "Von der ersten Kontaktaufnahme bis zur Auswahl war alles deutlich strukturierter als bei anderen Anbietern."
+            </p>
+            <strong data-admin-key="story-3-name" data-admin-label="Referenz 3 Name" data-admin-group="Referenzen">Beratung vor Ort, Korschenbroich</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta-section" id="kontakt">
+        <div class="cta-panel motion-reveal motion-up" data-reveal>
+          <div>
+            <p class="eyebrow">Kontakt</p>
+            <h2 data-admin-key="contact-title" data-admin-label="Kontakt Titel" data-admin-group="Kontakt">Sprich direkt mit Holidaily pools über dein Projekt.</h2>
+            <p data-admin-key="contact-text" data-admin-label="Kontakt Beschreibung" data-admin-group="Kontakt">
+              Ob erster Gartenpool, kompaktes Becken oder konkrete Rückfrage zu Technik und Ausstattung: hier bekommst
+              du schnellen, direkten Kontakt ohne Umwege.
+            </p>
+            <div class="contact-highlights" aria-label="Kontaktvorteile">
+              <span>Direkter Ansprechpartner</span>
+              <span>WhatsApp und E-Mail</span>
+              <span>Beratung vor Ort möglich</span>
+            </div>
+          </div>
+          <article class="contact-card contact-person-card">
+            <div class="contact-person-media">
+              <img
+                src="assets/ansprechpartner.png"
+                alt="Persönlicher Ansprechpartner von Holidaily pools"
+                data-admin-key="contact-person-image"
+                data-admin-type="image"
+                data-admin-label="Kontakt Bild"
+                data-admin-group="Kontakt"
+              >
+            </div>
+            <div class="contact-person-copy">
+              <p class="contact-kicker">Persönlicher Ansprechpartner</p>
+              <h3 data-admin-key="contact-card-title" data-admin-label="Kontakt Karten Titel" data-admin-group="Kontakt">Direkt erreichbar für deine Pool-Anfrage</h3>
+              <p data-admin-key="contact-card-text" data-admin-label="Kontakt Karten Text" data-admin-group="Kontakt">
+                Kurze Abstimmung, konkrete Empfehlungen und schnelle Rückmeldung per E-Mail oder WhatsApp.
+              </p>
+            </div>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <span class="contact-method-label">E-Mail</span>
+                <a href="mailto:Info@holidaily-pools.de">Info@Holidaily-pools.de</a>
+              </div>
+              <div class="contact-method">
+                <span class="contact-method-label">WhatsApp</span>
+                <button class="contact-method-button contact-chat-launch" type="button" data-chat-launch>
+                  Website-Chat
+                </button>
+                <span class="contact-method-hint">Direkter Chat auf der Website.</span>
+              </div>
+              <div class="contact-method">
+                <span class="contact-method-label">Adresse</span>
+                <span class="contact-method-value">Daimlerstraße 9, 41352 Korschenbroich, Deutschland</span>
+              </div>
+            </div>
+            <div class="contact-hours" aria-label="Öffnungszeiten">
+              <p class="contact-hours-title">Öffnungszeiten</p>
+              <div class="contact-hours-grid">
+                <span>Montag</span>
+                <span>09:00 - 18:00</span>
+                <span>Dienstag</span>
+                <span>09:00 - 18:00</span>
+                <span>Mittwoch</span>
+                <span>09:00 - 18:00</span>
+                <span>Donnerstag</span>
+                <span>09:00 - 18:00</span>
+                <span>Freitag</span>
+                <span>09:00 - 18:00</span>
+                <span>Samstag</span>
+                <span>09:00 - 15:00</span>
+                <span>Sonntag</span>
+                <span>Geschlossen</span>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <button class="button button-primary contact-chat-launch" type="button" data-chat-launch>
+                Website-Chat
+              </button>
+              <a class="button button-secondary" href="mailto:Info@holidaily-pools.de">E-Mail senden</a>
+            </div>
+            <p class="contact-note">Antworten erscheinen direkt im Website-Chat oder per WhatsApp.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section account-section" id="konto">
+        <div class="section-heading motion-reveal motion-up" data-reveal>
+          <p class="eyebrow">Login & Speicherbereich</p>
+          <h2>Ganz unten kannst du dich einloggen und eigene Inhalte sichern.</h2>
+        </div>
+        <div class="account-shell">
+          <article class="account-intro-card motion-reveal motion-up" data-reveal style="--delay: 0ms;">
+            <p class="eyebrow">Persönlicher Bereich</p>
+            <h3>Pool-Modelle merken, Notizen sammeln und später wieder aufrufen.</h3>
+            <p>
+              Der Bereich ist für Interessenten gedacht, die sich Modelle vormerken oder Projektideen festhalten wollen,
+              bevor es in die konkrete Beratung geht.
+            </p>
+            <div class="account-benefits" aria-label="Vorteile des Kontos">
+              <article>
+                <strong>Modelle speichern</strong>
+                <span>Merke dir Classic Pool, Family Pool, Mini Pool oder Design Pool direkt auf der Seite.</span>
+              </article>
+              <article>
+                <strong>Eigene Notizen</strong>
+                <span>Halte Maße, Technikwünsche oder Designideen für später fest.</span>
+              </article>
+              <article>
+                <strong>Schneller Wiedereinstieg</strong>
+                <span>Beim nächsten Besuch kannst du direkt mit deinen gemerkten Punkten weitermachen.</span>
+              </article>
+            </div>
+          </article>
+
+          <article class="account-card motion-reveal motion-up" data-reveal style="--delay: 120ms;">
+            <div class="account-status-row">
+              <div>
+                <p class="account-kicker">Dein Holidaily Konto</p>
+                <h3 id="accountTitle">Einloggen oder Konto anlegen</h3>
+              </div>
+              <span class="account-status-badge" id="accountStatusBadge">Nicht eingeloggt</span>
+            </div>
+
+            <p class="account-card-copy" id="accountStatusText">
+              Melde dich an, um Pool-Modelle und eigene Notizen serverseitig zu speichern und auf anderen Geraeten
+              wieder aufzurufen.
+            </p>
+
+            <div class="account-mode-toggle" id="accountModeToggle" aria-label="Login oder Registrierung">
+              <button class="account-mode-button is-active" type="button" data-auth-mode="login" aria-pressed="true">
+                Einloggen
+              </button>
+              <button class="account-mode-button" type="button" data-auth-mode="register" aria-pressed="false">
+                Konto anlegen
+              </button>
+            </div>
+
+            <form class="account-auth-form" id="accountAuthForm">
+              <label class="account-field account-name-field" id="accountNameField" hidden>
+                <span>Name</span>
+                <input type="text" id="accountNameInput" autocomplete="name" placeholder="Dein Name">
+              </label>
+
+              <label class="account-field">
+                <span>E-Mail</span>
+                <input type="email" id="accountEmailInput" autocomplete="email" placeholder="name@example.com" required>
+              </label>
+
+              <label class="account-field">
+                <span>Passwort</span>
+                <input
+                  type="password"
+                  id="accountPasswordInput"
+                  autocomplete="current-password"
+                  placeholder="Mindestens 6 Zeichen"
+                  required
+                  minlength="6"
+                >
+              </label>
+
+              <div class="account-form-actions">
+                <button class="button button-primary" type="submit" id="accountSubmitButton">Einloggen</button>
+                <button class="button button-ghost" type="button" id="accountLogoutButton" hidden>Abmelden</button>
+              </div>
+            </form>
+
+            <p class="account-feedback" id="accountFeedback" role="status" aria-live="polite" hidden></p>
+
+            <div class="account-storage" id="accountStorage" hidden>
+              <section class="account-storage-block">
+                <div class="account-storage-heading">
+                  <h4>Gespeicherte Pool-Modelle</h4>
+                  <span id="savedModelCount">0 Modelle</span>
                 </div>
-                <div class="product-info">
-                    <h3>{{ product.name }}</h3>
-                    <p class="family">{{ product.family }}</p>
-                    <div class="product-bottom">
-                        <span class="price">{{ product.price }}€</span>
-                        <button class="add-btn" onclick="addToCart()">In den Warenkorb</button>
-                    </div>
+                <div class="saved-model-list" id="savedModelList">
+                  <p class="account-empty-state">Noch keine Modelle gespeichert.</p>
                 </div>
+              </section>
+
+              <section class="account-storage-block">
+                <div class="account-storage-heading">
+                  <h4>Notizen</h4>
+                  <span id="savedNoteCount">0 Notizen</span>
+                </div>
+
+                <form class="note-form" id="noteForm">
+                  <label class="account-field">
+                    <span>Neue Notiz</span>
+                    <textarea
+                      id="noteInput"
+                      placeholder="Zum Beispiel: Family Pool mit heller Innenfarbe, Abdeckung und flacher Treppe merken."
+                    ></textarea>
+                  </label>
+                  <div class="account-form-actions">
+                    <button class="button button-secondary" type="submit">Notiz speichern</button>
+                  </div>
+                </form>
+
+                <div class="note-list" id="noteList">
+                  <p class="account-empty-state">Noch keine Notizen gespeichert.</p>
+                </div>
+              </section>
             </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
 
-<section class="about-section" id="about">
-    <div class="container">
-        <div class="section-head">
-            <p class="section-label">Why AESTAS</p>
-            <h2>Mehr als ein Duft</h2>
-        </div>
+            <p class="account-storage-note">
+              Hinweis: Login, gemerkte Modelle und Notizen werden ueber die Holidaily-API gespeichert und sind auf
+              anderen Geraeten verfuegbar, solange dieselbe API-Instanz genutzt wird.
+            </p>
 
-        <div class="features">
-            <div class="feature-card">
-                <h3>Exklusive Kompositionen</h3>
-                <p>Charakterstarke Duftnoten mit luxuriöser Wirkung.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section admin-section" id="test-admin" hidden>
+        <div class="section-heading motion-reveal motion-up" data-reveal>
+          <p class="eyebrow">Live-Admin</p>
+          <h2>Texte und Bilder zentral aendern und auf allen Geraeten sofort pruefen.</h2>
+        </div>
+        <div class="admin-shell">
+          <article class="account-intro-card admin-intro-card motion-reveal motion-up" data-reveal style="--delay: 0ms;">
+            <p class="eyebrow">Fuer die Live-Seite</p>
+            <h3>Ein zentraler Admin-Modus fuer deine Live-Seite.</h3>
+            <p>
+              Nach dem Login kannst du markierte Inhalte direkt auf dieser Seite anpassen. Die Bearbeitung wird zentral
+              gespeichert und ist danach auf allen Geraeten mit derselben Live-Seite sichtbar.
+            </p>
+            <div class="account-benefits admin-benefits" aria-label="Admin Vorteile">
+              <article>
+                <strong>Texte live anpassen</strong>
+                <span>Hero, Modelle, Referenzen und Kontakttexte werden sofort in der Seite aktualisiert.</span>
+              </article>
+              <article>
+                <strong>Bilder austauschen</strong>
+                <span>Hero-Bild und Kontaktfoto koennen direkt per Upload fuer die Live-Seite ersetzt werden.</span>
+              </article>
+              <article>
+                <strong>Ohne Push</strong>
+                <span>Du speicherst direkt in der Live-Instanz, ohne jedes Mal neu deployen zu muessen.</span>
+              </article>
             </div>
-            <div class="feature-card">
-                <h3>Modernes Design</h3>
-                <p>Premium-Optik mit klarem, elegantem Stil.</p>
+          </article>
+
+          <article class="account-card admin-card motion-reveal motion-up" data-reveal style="--delay: 120ms;">
+            <div class="account-status-row admin-status-row">
+              <div>
+                <p class="account-kicker">Admin Bereich</p>
+                <h3 id="adminTitle">Admin-Funktionen fuer die Live-Seite</h3>
+              </div>
+              <span class="account-status-badge" id="adminStatusBadge">Freigeschaltet</span>
             </div>
-            <div class="feature-card">
-                <h3>Bleibende Präsenz</h3>
-                <p>Düfte für Menschen, die auffallen, ohne laut zu sein.</p>
+
+            <p class="account-card-copy" id="adminStatusText">
+              Der Admin-Zugang ist aktiv. Jetzt kannst du Texte direkt auf der Seite bearbeiten und unten Bilder fuer
+              die Live-Seite austauschen.
+            </p>
+
+            <div class="admin-editor" id="adminEditor" hidden>
+              <div class="admin-preview-chips" aria-label="Admin Uebersicht">
+                <span class="admin-preview-chip" id="adminTextCount">0 Texte</span>
+                <span class="admin-preview-chip" id="adminImageCount">0 Bilder</span>
+                <span class="admin-preview-chip">Zentrale Live-Speicherung</span>
+              </div>
+
+              <section class="account-storage-block admin-editor-block admin-inline-block">
+                <div class="account-storage-heading">
+                  <h4>Texte direkt auf der Seite bearbeiten</h4>
+                  <span>Inline Editing</span>
+                </div>
+                <p class="account-storage-note admin-inline-note">
+                  Nach dem Login kannst du jeden markierten Text direkt anklicken und sofort ueberschreiben. Mit
+                  "Aenderungen speichern" wird der Stand zentral gesichert und auf allen Geraeten ausgeliefert.
+                </p>
+              </section>
+
+              <section class="account-storage-block admin-editor-block">
+                <div class="account-storage-heading">
+                  <h4>Bilder bearbeiten</h4>
+                  <span>Upload fuer Test</span>
+                </div>
+                <div class="admin-editor-list admin-image-editor-list" id="adminImageEditorList"></div>
+              </section>
+
+              <section class="account-storage-block admin-editor-block admin-chat-block">
+                <div class="account-storage-heading">
+                  <h4>Website-Chat testen</h4>
+                  <div class="admin-chat-chip-group" aria-label="Chat Uebersicht">
+                    <span class="admin-preview-chip" id="adminChatThreadCount">0 Chats</span>
+                    <span class="admin-preview-chip" id="adminChatUnreadCount">0 offene Chats</span>
+                  </div>
+                </div>
+                <p class="account-storage-note admin-inline-note">
+                  Besucher oeffnen den Chat ueber den Chat-Button auf der Website. Antworten werden direkt im
+                  Website-Chat angezeigt.
+                </p>
+                <div class="admin-chat-shell">
+                  <div class="admin-chat-thread-list" id="adminChatThreadList"></div>
+                  <div class="admin-chat-detail">
+                    <div class="admin-chat-detail-header">
+                      <p class="account-kicker">Aktiver Chat</p>
+                      <h5 id="adminChatDetailTitle">Noch kein Chat gestartet</h5>
+                      <p class="admin-chat-detail-meta" id="adminChatDetailMeta">
+                        Sobald ein Besucher schreibt, erscheint der Verlauf hier.
+                      </p>
+                    </div>
+                    <div class="chat-message-list admin-chat-message-list" id="adminChatMessageList">
+                      <p class="account-empty-state">Noch keine Chat-Nachrichten vorhanden.</p>
+                    </div>
+                    <form class="admin-chat-reply-form" id="adminChatReplyForm" hidden>
+                      <label class="account-field">
+                        <span>Antwort an den Besucher</span>
+                        <textarea
+                          id="adminChatReplyInput"
+                          placeholder="Zum Beispiel: Danke, ich schaue mir dein Pool-Projekt an und melde mich gleich."
+                          minlength="2"
+                        ></textarea>
+                      </label>
+                      <div class="account-form-actions">
+                        <button class="button button-primary" type="submit">Antwort senden</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
+
+              <div class="account-form-actions admin-editor-actions">
+                <button class="button button-primary" type="button" id="adminSaveButton">Aenderungen speichern</button>
+                <button class="button button-secondary" type="button" id="adminResetButton">Original wiederherstellen</button>
+              </div>
+
+              <p class="account-storage-note admin-helper-note">
+                Bilder werden zentral gespeichert und live ausgeliefert. Fuer stabile Ladezeiten am besten optimierte
+                JPG, PNG oder WebP Dateien verwenden.
+              </p>
             </div>
+          </article>
         </div>
-    </div>
-</section>
+      </section>
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p class="footer-copy">
+            Holidaily pools aus Korschenbroich. Beratung, Kontakt und die wichtigen Rechtstexte an einem Ort.
+          </p>
+          <nav class="footer-links" aria-label="Footer">
+            <a href="#kontakt">Kontakt</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <div class="admin-auth-overlay" id="adminAuthOverlay" hidden aria-hidden="true">
+    <div class="admin-auth-backdrop" data-admin-auth-close></div>
+    <section
+      class="admin-auth-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="adminAuthTitle"
+      aria-describedby="adminAuthDescription"
+    >
+      <button class="admin-auth-close" type="button" id="adminAuthCloseButton" aria-label="Login schliessen">
+        Schliessen
+      </button>
+      <p class="eyebrow">Interner Bereich</p>
+      <h2 id="adminAuthTitle">Geschuetzter Zugang</h2>
+      <p class="account-card-copy" id="adminAuthDescription">
+        Zugangsdaten eingeben, um die internen Bearbeitungsfunktionen freizuschalten.
+      </p>
 
-<section class="newsletter-section" id="newsletter">
-    <div class="container newsletter-box">
-        <div>
-            <p class="section-label">Newsletter</p>
-            <h2>Bleib nah an AESTAS</h2>
-            <p>Neue Düfte, limitierte Editionen und exklusive Drops.</p>
-        </div>
-        <form class="newsletter-form" onsubmit="newsletterSubmit(event)">
-            <input type="email" placeholder="Deine E-Mail-Adresse" required>
-            <button type="submit" class="btn primary">Anmelden</button>
-        </form>
-    </div>
-</section>
+      <form class="account-auth-form admin-login-form" id="adminLoginForm">
+        <label class="account-field">
+          <span>Name</span>
+          <input type="text" id="adminNameInput" autocomplete="name" required>
+        </label>
 
-<footer class="footer">
-    <div class="container footer-content">
-        <div>
-            <div class="logo footer-logo">AESTAS</div>
-            <p>Luxus Parfüm mit Charakter.</p>
-        </div>
-        <div class="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">Kontakt</a>
-        </div>
-    </div>
-</footer>
+        <label class="account-field">
+          <span>E-Mail</span>
+          <input type="email" id="adminEmailInput" autocomplete="username" required>
+        </label>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+        <label class="account-field">
+          <span>Passwort</span>
+          <input
+            type="password"
+            id="adminPasswordInput"
+            autocomplete="current-password"
+            required
+          >
+        </label>
+
+        <div class="account-form-actions">
+          <button class="button button-primary" type="submit" id="adminLoginButton">Freischalten</button>
+          <button class="button button-ghost" type="button" id="adminLogoutButton" hidden>Abmelden</button>
+        </div>
+      </form>
+
+      <p class="account-feedback" id="adminFeedback" role="status" aria-live="polite" hidden></p>
+    </section>
+  </div>
+  <button
+    class="chat-float"
+    id="testChatToggleButton"
+    data-chat-launch
+    type="button"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="testChatPanel"
+    aria-label="Website-Chat oeffnen"
+  >
+    <span class="chat-float-icon" aria-hidden="true">
+      <svg viewBox="0 0 48 48" focusable="false">
+        <path
+          d="M14.4 34.1 9.4 38l1.6-6.6A15.2 15.2 0 1 1 24 39.2c-3.3 0-6.4-1-9.6-2.7Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="17.6" cy="23.8" r="2.2" fill="currentColor" />
+        <circle cx="24" cy="23.8" r="2.2" fill="currentColor" />
+        <circle cx="30.4" cy="23.8" r="2.2" fill="currentColor" />
+      </svg>
+    </span>
+    <span class="chat-float-badge" id="chatUnreadBadge" hidden>0</span>
+    <span class="sr-only">Website-Chat oeffnen</span>
+  </button>
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/491632178170"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp oeffnen"
+  >
+    <img src="assets/whatsapp-icon.png" alt="" width="64" height="64">
+    <span class="sr-only">WhatsApp oeffnen</span>
+  </a>
+  <div class="test-chat-backdrop" id="testChatBackdrop" hidden></div>
+  <section
+    class="test-chat-panel"
+    id="testChatPanel"
+    hidden
+    aria-hidden="true"
+    aria-labelledby="testChatTitle"
+  >
+    <div class="test-chat-panel-header">
+      <div>
+        <p class="eyebrow">Website-Chat</p>
+        <h2 id="testChatTitle">Chat direkt auf der Website</h2>
+      </div>
+      <button class="test-chat-close" type="button" id="testChatCloseButton" aria-label="Chat schliessen">
+        Schliessen
+      </button>
+    </div>
+    <p class="test-chat-note">
+      Schreibe uns direkt hier auf der Website. Alternativ bleibt WhatsApp weiter unten erreichbar.
+    </p>
+    <p class="test-chat-status" id="testChatStatus">
+      Schreibe hier deine Nachricht. Antworten erscheinen direkt im Website-Chat.
+    </p>
+    <div class="chat-message-list test-chat-message-list" id="testChatMessages">
+      <p class="account-empty-state">Noch keine Nachrichten. Starte den Chat mit deiner ersten Frage.</p>
+    </div>
+    <form class="test-chat-form" id="testChatForm">
+      <label class="account-field">
+        <span>Name</span>
+        <input type="text" id="testChatNameInput" maxlength="40" placeholder="Dein Name">
+      </label>
+      <label class="account-field">
+        <span>Nachricht</span>
+        <textarea
+          id="testChatMessageInput"
+          placeholder="Zum Beispiel: Ich interessiere mich fuer einen Familienpool mit Abdeckung."
+          minlength="2"
+          required
+        ></textarea>
+      </label>
+      <div class="account-form-actions">
+        <button class="button button-primary" type="submit">Nachricht senden</button>
+      </div>
+      <p class="account-feedback" id="testChatFeedback" role="status" aria-live="polite" hidden></p>
+    </form>
+  </section>
+  <script>
+    const motionElements = document.querySelectorAll("[data-reveal]");
+    const header = document.querySelector(".site-header");
+    const adminSecretTrigger = document.querySelector(".brand-mark");
+    const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+    const sectionLinks = navLinks
+      .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
+      .filter(({ section }) => section);
+    const heroVisual = document.querySelector(".hero-visual");
+    const interactiveSurfaces = document.querySelectorAll(
+      ".hero-card, .hero-detail-strip, .hero-stats article, .feature-card, .offer-card, .story-card, .contact-card, .contact-method, .contact-hours, .spotlight-list article, .spotlight-metrics article, .account-card, .account-intro-card, .account-storage-block, .saved-model-chip, .note-item, .admin-card, .admin-intro-card, .admin-editor-block, .admin-editor-item"
+    );
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    const accountSection = document.querySelector("#konto");
+    const adminSection = document.querySelector("#test-admin");
+    const saveModelButtons = Array.from(document.querySelectorAll(".model-save-button"));
+    const authModeToggle = document.querySelector("#accountModeToggle");
+    const authModeButtons = Array.from(document.querySelectorAll(".account-mode-button"));
+    const accountAuthForm = document.querySelector("#accountAuthForm");
+    const accountStorage = document.querySelector("#accountStorage");
+    const accountTitle = document.querySelector("#accountTitle");
+    const accountStatusBadge = document.querySelector("#accountStatusBadge");
+    const accountStatusText = document.querySelector("#accountStatusText");
+    const accountNameField = document.querySelector("#accountNameField");
+    const accountNameInput = document.querySelector("#accountNameInput");
+    const accountEmailInput = document.querySelector("#accountEmailInput");
+    const accountPasswordInput = document.querySelector("#accountPasswordInput");
+    const accountSubmitButton = document.querySelector("#accountSubmitButton");
+    const accountLogoutButton = document.querySelector("#accountLogoutButton");
+    const accountFeedback = document.querySelector("#accountFeedback");
+    const savedModelList = document.querySelector("#savedModelList");
+    const savedModelCount = document.querySelector("#savedModelCount");
+    const noteForm = document.querySelector("#noteForm");
+    const noteInput = document.querySelector("#noteInput");
+    const noteList = document.querySelector("#noteList");
+    const savedNoteCount = document.querySelector("#savedNoteCount");
+    const accountStorageNote = document.querySelector(".account-storage-note");
+    const adminAuthOverlay = document.querySelector("#adminAuthOverlay");
+    const adminAuthCloseButton = document.querySelector("#adminAuthCloseButton");
+    const adminLoginForm = document.querySelector("#adminLoginForm");
+    const adminNameInput = document.querySelector("#adminNameInput");
+    const adminEmailInput = document.querySelector("#adminEmailInput");
+    const adminPasswordInput = document.querySelector("#adminPasswordInput");
+    const adminLoginButton = document.querySelector("#adminLoginButton");
+    const adminLogoutButton = document.querySelector("#adminLogoutButton");
+    const adminTitle = document.querySelector("#adminTitle");
+    const adminStatusBadge = document.querySelector("#adminStatusBadge");
+    const adminStatusText = document.querySelector("#adminStatusText");
+    const adminFeedback = document.querySelector("#adminFeedback");
+    const adminEditor = document.querySelector("#adminEditor");
+    const adminImageEditorList = document.querySelector("#adminImageEditorList");
+    const adminSaveButton = document.querySelector("#adminSaveButton");
+    const adminResetButton = document.querySelector("#adminResetButton");
+    const adminTextCount = document.querySelector("#adminTextCount");
+    const adminImageCount = document.querySelector("#adminImageCount");
+    const chatToggleButton = document.querySelector("#testChatToggleButton");
+    const chatLaunchButtons = Array.from(document.querySelectorAll("[data-chat-launch]"));
+    const chatPanel = document.querySelector("#testChatPanel");
+    const chatBackdrop = document.querySelector("#testChatBackdrop");
+    const chatCloseButton = document.querySelector("#testChatCloseButton");
+    const chatStatus = document.querySelector("#testChatStatus");
+    const chatMessages = document.querySelector("#testChatMessages");
+    const chatForm = document.querySelector("#testChatForm");
+    const chatNameInput = document.querySelector("#testChatNameInput");
+    const chatMessageInput = document.querySelector("#testChatMessageInput");
+    const chatFeedback = document.querySelector("#testChatFeedback");
+    const chatUnreadBadge = document.querySelector("#chatUnreadBadge");
+    const adminChatThreadCount = document.querySelector("#adminChatThreadCount");
+    const adminChatUnreadCount = document.querySelector("#adminChatUnreadCount");
+    const adminChatThreadList = document.querySelector("#adminChatThreadList");
+    const adminChatDetailTitle = document.querySelector("#adminChatDetailTitle");
+    const adminChatDetailMeta = document.querySelector("#adminChatDetailMeta");
+    const adminChatMessageList = document.querySelector("#adminChatMessageList");
+    const adminChatReplyForm = document.querySelector("#adminChatReplyForm");
+    const adminChatReplyInput = document.querySelector("#adminChatReplyInput");
+    const adminEditableElements = Array.from(document.querySelectorAll("[data-admin-key]"));
+    const adminTextDefinitions = adminEditableElements
+      .filter((element) => (element.dataset.adminType || "text") === "text")
+      .map((element) => ({
+        key: element.dataset.adminKey || "",
+        label: element.dataset.adminLabel || "Text",
+        group: element.dataset.adminGroup || "Allgemein",
+        element,
+        defaultValue: element.textContent.trim()
+      }))
+      .filter((definition) => definition.key);
+    const adminImageDefinitions = adminEditableElements
+      .filter((element) => element.dataset.adminType === "image")
+      .map((element) => ({
+        key: element.dataset.adminKey || "",
+        label: element.dataset.adminLabel || "Bild",
+        group: element.dataset.adminGroup || "Allgemein",
+        element,
+        defaultValue: {
+          src: element.getAttribute("src") || "",
+          alt: element.getAttribute("alt") || ""
+        }
+      }))
+      .filter((definition) => definition.key);
+    const ADMIN_SESSION_STORAGE_KEY = "holidaily-admin-session-v1";
+    const ADMIN_API_TOKEN_STORAGE_KEY = "holidaily-admin-api-token-v1";
+    const ACCOUNT_API_TOKEN_STORAGE_KEY = "holidaily-account-api-token-v1";
+    const API_BASE_STORAGE_KEY = "holidaily-api-base-v1";
+    const CHAT_STORAGE_KEY = "holidaily-test-chat-v1";
+    const CHAT_VISITOR_THREAD_STORAGE_KEY = "holidaily-test-chat-thread-v1";
+    const KNOWN_API_BASE_FALLBACKS = [];
+    const DEFAULT_API_BASE = (() => {
+      const configuredBase =
+        (window.HOLIDAILY_API_BASE || document.querySelector('meta[name="holidaily-api-base"]')?.content || "/api").trim();
+
+      if (!configuredBase || configuredBase === "/") {
+        return "/api";
+      }
+
+      return configuredBase.replace(/\/+$/, "");
+    })();
+    const CHAT_POLL_INTERVAL_MS = 5000;
+    let authMode = "login";
+    let adminDraftContent = null;
+    let adminContentState = null;
+    let adminSecretTapCount = 0;
+    let adminSecretTapTimer = 0;
+    let activeAdminChatThreadId = "";
+    let lastTouchChatLaunchAt = 0;
+    let chatPollTimer = 0;
+    let chatSyncPromise = null;
+    let chatDataSource = "local";
+    let activeApiBase = "";
+    let apiBaseResolutionPromise = null;
+    let hasPromptedForApiBase = false;
+
+    const revealAll = () => {
+      motionElements.forEach((element) => element.classList.add("is-visible"));
+    };
+
+    const syncHeaderState = () => {
+      if (!header) {
+        return;
+      }
+
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+
+    const syncActiveNav = () => {
+      if (!sectionLinks.length) {
+        return;
+      }
+
+      const marker = window.scrollY + window.innerHeight * 0.34;
+      let activeLink = null;
+
+      sectionLinks.forEach(({ link, section }) => {
+        if (section.offsetTop <= marker) {
+          activeLink = link;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link === activeLink);
+      });
+    };
+
+    let scrollFrame = 0;
+
+    const queueScrollSync = () => {
+      if (scrollFrame) {
+        return;
+      }
+
+      scrollFrame = window.requestAnimationFrame(() => {
+        syncHeaderState();
+        syncActiveNav();
+        scrollFrame = 0;
+      });
+    };
+
+    syncHeaderState();
+    syncActiveNav();
+    window.addEventListener("scroll", queueScrollSync, { passive: true });
+    window.addEventListener("resize", queueScrollSync);
+
+    if (!prefersReducedMotion.matches) {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.18,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      motionElements.forEach((element) => revealObserver.observe(element));
+    } else {
+      revealAll();
+    }
+
+    if (!prefersReducedMotion.matches && hasFinePointer) {
+      interactiveSurfaces.forEach((surface) => {
+        let pointerFrame = 0;
+        let lastEvent;
+
+        const updateGlow = (event) => {
+          const rect = surface.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+
+          surface.style.setProperty("--glow-x", `${x}px`);
+          surface.style.setProperty("--glow-y", `${y}px`);
+          surface.style.setProperty("--glow-alpha", "1");
+        };
+
+        surface.addEventListener("pointerenter", (event) => {
+          updateGlow(event);
+        });
+
+        surface.addEventListener("pointermove", (event) => {
+          lastEvent = event;
+
+          if (pointerFrame) {
+            return;
+          }
+
+          pointerFrame = window.requestAnimationFrame(() => {
+            updateGlow(lastEvent);
+            pointerFrame = 0;
+          });
+        });
+
+        surface.addEventListener("pointerleave", () => {
+          surface.style.setProperty("--glow-alpha", "0");
+        });
+      });
+
+      if (heroVisual) {
+        let heroFrame = 0;
+
+        const setHeroShift = (xRatio, yRatio) => {
+          heroVisual.style.setProperty("--hero-shift-x", `${(xRatio - 0.5) * 24}px`);
+          heroVisual.style.setProperty("--hero-shift-y", `${(yRatio - 0.5) * 18}px`);
+        };
+
+        setHeroShift(0.5, 0.5);
+
+        heroVisual.addEventListener("pointermove", (event) => {
+          const rect = heroVisual.getBoundingClientRect();
+          const xRatio = (event.clientX - rect.left) / rect.width;
+          const yRatio = (event.clientY - rect.top) / rect.height;
+
+          if (heroFrame) {
+            window.cancelAnimationFrame(heroFrame);
+          }
+
+          heroFrame = window.requestAnimationFrame(() => {
+            setHeroShift(xRatio, yRatio);
+          });
+        });
+
+        heroVisual.addEventListener("pointerleave", () => {
+          setHeroShift(0.5, 0.5);
+        });
+      }
+    } else if (heroVisual) {
+      heroVisual.style.setProperty("--hero-shift-x", "0px");
+      heroVisual.style.setProperty("--hero-shift-y", "0px");
+    }
+
+    const createNode = (tagName, className, text) => {
+      const element = document.createElement(tagName);
+
+      if (className) {
+        element.className = className;
+      }
+
+      if (typeof text === "string") {
+        element.textContent = text;
+      }
+
+      return element;
+    };
+
+    const readStoredJson = (storageKey, fallbackValue) => {
+      try {
+        const rawValue = window.localStorage.getItem(storageKey);
+
+        if (!rawValue) {
+          return fallbackValue;
+        }
+
+        const parsedValue = JSON.parse(rawValue);
+        return parsedValue && typeof parsedValue === "object" ? parsedValue : fallbackValue;
+      } catch (error) {
+        return fallbackValue;
+      }
+    };
+
+    const writeStoredJson = (storageKey, value) => {
+      window.localStorage.setItem(storageKey, JSON.stringify(value));
+    };
+
+    const normalizeEmail = (value) => value.trim().toLowerCase();
+    const normalizeAdminName = (value) => value.trim().toLowerCase();
+
+    const normalizeSavedModel = (model = {}) => {
+      const id = typeof model.id === "string" ? model.id : "";
+      const name = typeof model.name === "string" ? model.name : "";
+
+      if (!id || !name) {
+        return null;
+      }
+
+      return {
+        id,
+        name,
+        savedAt: typeof model.savedAt === "string" ? model.savedAt : new Date().toISOString()
+      };
+    };
+
+    const normalizeNote = (note = {}) => {
+      const id = typeof note.id === "string" ? note.id : "";
+      const text = typeof note.text === "string" ? note.text.trim() : "";
+
+      if (!id || text.length < 3) {
+        return null;
+      }
+
+      return {
+        id,
+        text,
+        createdAt: typeof note.createdAt === "string" ? note.createdAt : new Date().toISOString()
+      };
+    };
+
+    const getSafeUserData = (userRecord = {}) => {
+      const email = typeof userRecord.email === "string" ? normalizeEmail(userRecord.email) : "";
+
+      if (!email) {
+        return null;
+      }
+
+      return {
+        email,
+        name: typeof userRecord.name === "string" ? userRecord.name : "",
+        savedModels: Array.isArray(userRecord.savedModels)
+          ? userRecord.savedModels.map((model) => normalizeSavedModel(model)).filter((model) => model)
+          : [],
+        notes: Array.isArray(userRecord.notes)
+          ? userRecord.notes.map((note) => normalizeNote(note)).filter((note) => note)
+          : [],
+        createdAt: typeof userRecord.createdAt === "string" ? userRecord.createdAt : "",
+        updatedAt: typeof userRecord.updatedAt === "string" ? userRecord.updatedAt : ""
+      };
+    };
+
+    let currentUser = null;
+
+    const getCurrentUser = () => currentUser;
+
+    const setCurrentUser = (userRecord) => {
+      currentUser = getSafeUserData(userRecord);
+      return currentUser;
+    };
+
+    const formatCount = (count, singular, plural) => `${count} ${count === 1 ? singular : plural}`;
+
+    const formatDate = (value) =>
+      new Intl.DateTimeFormat("de-DE", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      }).format(new Date(value));
+
+    const createChatEntityId = () => {
+      if (window.crypto && typeof window.crypto.randomUUID === "function") {
+        return window.crypto.randomUUID();
+      }
+
+      return `chat-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    };
+
+    const setFeedback = (message, type = "") => {
+      if (!accountFeedback) {
+        return;
+      }
+
+      accountFeedback.textContent = message;
+      accountFeedback.hidden = !message;
+      accountFeedback.classList.remove("is-error", "is-success");
+
+      if (type) {
+        accountFeedback.classList.add(type === "error" ? "is-error" : "is-success");
+      }
+    };
+
+    const sanitizeChatName = (value) => value.replace(/\s+/g, " ").trim().slice(0, 40);
+
+    const sanitizeChatMessage = (value) =>
+      value
+        .replace(/\u00A0/g, " ")
+        .replace(/\r\n/g, "\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim()
+        .slice(0, 1200);
+
+    const getTimestamp = (value) => {
+      const timestamp = Date.parse(value);
+      return Number.isNaN(timestamp) ? 0 : timestamp;
+    };
+
+    const normalizeChatMessage = (message = {}) => {
+      const text = typeof message.text === "string" ? sanitizeChatMessage(message.text) : "";
+
+      if (!text) {
+        return null;
+      }
+
+      return {
+        id: typeof message.id === "string" && message.id ? message.id : createChatEntityId(),
+        author: message.author === "admin" ? "admin" : "visitor",
+        text,
+        createdAt:
+          typeof message.createdAt === "string" && getTimestamp(message.createdAt)
+            ? message.createdAt
+            : new Date().toISOString(),
+        readByAdmin: Boolean(message.readByAdmin) || message.author === "admin",
+        readByVisitor: Boolean(message.readByVisitor) || message.author === "visitor"
+      };
+    };
+
+    const normalizeChatThread = (threadId, thread = {}) => {
+      const messages = Array.isArray(thread.messages)
+        ? thread.messages
+            .map((message) => normalizeChatMessage(message))
+            .filter((message) => message)
+            .sort((left, right) => getTimestamp(left.createdAt) - getTimestamp(right.createdAt))
+        : [];
+      const createdAt =
+        typeof thread.createdAt === "string" && getTimestamp(thread.createdAt)
+          ? thread.createdAt
+          : messages[0]?.createdAt || new Date().toISOString();
+      const updatedAt =
+        typeof thread.updatedAt === "string" && getTimestamp(thread.updatedAt)
+          ? thread.updatedAt
+          : messages[messages.length - 1]?.createdAt || createdAt;
+
+      return {
+        id: threadId,
+        visitorName: sanitizeChatName(typeof thread.visitorName === "string" ? thread.visitorName : "") || "Besucher",
+        createdAt,
+        updatedAt,
+        messages
+      };
+    };
+
+    const loadChatState = () => {
+      const stored = readStoredJson(CHAT_STORAGE_KEY, {});
+      const sourceThreads = stored?.threads && typeof stored.threads === "object" ? stored.threads : {};
+
+      return {
+        threads: Object.fromEntries(
+          Object.keys(sourceThreads).map((threadId) => [threadId, normalizeChatThread(threadId, sourceThreads[threadId])])
+        )
+      };
+    };
+
+    const saveChatState = (state) => {
+      writeStoredJson(CHAT_STORAGE_KEY, state);
+    };
+
+    const getStoredAdminApiToken = () => window.localStorage.getItem(ADMIN_API_TOKEN_STORAGE_KEY) || "";
+
+    const setStoredAdminApiToken = (token) => {
+      if (!token) {
+        window.localStorage.removeItem(ADMIN_API_TOKEN_STORAGE_KEY);
+        return;
+      }
+
+      window.localStorage.setItem(ADMIN_API_TOKEN_STORAGE_KEY, token);
+    };
+
+    const getStoredAccountApiToken = () => window.localStorage.getItem(ACCOUNT_API_TOKEN_STORAGE_KEY) || "";
+
+    const setStoredAccountApiToken = (token) => {
+      if (!token) {
+        window.localStorage.removeItem(ACCOUNT_API_TOKEN_STORAGE_KEY);
+        return;
+      }
+
+      window.localStorage.setItem(ACCOUNT_API_TOKEN_STORAGE_KEY, token);
+    };
+
+    const getStoredApiBaseOverride = () => (window.localStorage.getItem(API_BASE_STORAGE_KEY) || "").trim();
+
+    const setStoredApiBaseOverride = (value) => {
+      const normalizedValue = typeof value === "string" ? value.trim().replace(/\/+$/, "") : "";
+
+      if (!normalizedValue) {
+        window.localStorage.removeItem(API_BASE_STORAGE_KEY);
+        return;
+      }
+
+      window.localStorage.setItem(API_BASE_STORAGE_KEY, normalizedValue);
+    };
+
+    const normalizeApiBaseInput = (value) => {
+      const trimmedValue = typeof value === "string" ? value.trim() : "";
+
+      if (!trimmedValue) {
+        return "";
+      }
+
+      const withProtocol = /^https?:\/\//i.test(trimmedValue) ? trimmedValue : `https://${trimmedValue}`;
+      const normalizedValue = withProtocol.replace(/\/+$/, "");
+
+      return normalizedValue.endsWith("/api") ? normalizedValue : `${normalizedValue}/api`;
+    };
+
+    const promptForApiBase = (reason = "") => {
+      if (hasPromptedForApiBase) {
+        return "";
+      }
+
+      hasPromptedForApiBase = true;
+      const message = [
+        reason || "Die zentrale API ist nicht erreichbar.",
+        "",
+        "Bitte die oeffentliche Backend-URL eingeben, zum Beispiel:",
+        "https://dein-service.up.railway.app/api"
+      ].join("\n");
+      const userInput = window.prompt(message, getStoredApiBaseOverride() || "");
+      const normalizedValue = normalizeApiBaseInput(userInput || "");
+
+      if (!normalizedValue) {
+        return "";
+      }
+
+      setStoredApiBaseOverride(normalizedValue);
+      activeApiBase = normalizedValue;
+      return normalizedValue;
+    };
+
+    const getApiBaseCandidates = () => {
+      const urlApiBase = new URLSearchParams(window.location.search).get("apiBase")?.trim() || "";
+
+      if (urlApiBase) {
+        setStoredApiBaseOverride(urlApiBase);
+      }
+
+      const candidates = [urlApiBase, getStoredApiBaseOverride(), DEFAULT_API_BASE, ...KNOWN_API_BASE_FALLBACKS];
+
+      if (DEFAULT_API_BASE.startsWith("/") && window.location.hostname) {
+        candidates.push(`${window.location.protocol}//api.${window.location.hostname}${DEFAULT_API_BASE}`);
+      }
+
+      return Array.from(
+        new Set(
+          candidates
+            .map((value) => value.trim())
+            .filter((value) => value)
+            .map((value) => value.replace(/\/+$/, ""))
+        )
+      );
+    };
+
+    const buildApiUrl = (base, path) => `${base}${path}`;
+
+    const probeApiBase = async (base) => {
+      const response = await fetch(buildApiUrl(base, "/content"), {
+        method: "GET"
+      });
+
+      if (!response.ok) {
+        const error = new Error(`API probe failed for ${base}`);
+        error.status = response.status;
+        throw error;
+      }
+
+      return base;
+    };
+
+    const resolveApiBase = async ({ force = false } = {}) => {
+      if (activeApiBase && !force) {
+        return activeApiBase;
+      }
+
+      if (apiBaseResolutionPromise && !force) {
+        return apiBaseResolutionPromise;
+      }
+
+      const candidates = getApiBaseCandidates();
+
+      apiBaseResolutionPromise = (async () => {
+        let lastError = null;
+
+        for (const candidate of candidates) {
+          try {
+            await probeApiBase(candidate);
+            activeApiBase = candidate;
+            hasPromptedForApiBase = false;
+
+            if (candidate !== DEFAULT_API_BASE) {
+              setStoredApiBaseOverride(candidate);
+            }
+
+            return candidate;
+          } catch (error) {
+            lastError = error;
+          }
+        }
+
+        activeApiBase = candidates[0] || DEFAULT_API_BASE;
+        const promptedBase = promptForApiBase("Die zentrale API konnte nicht automatisch gefunden werden.");
+
+        if (promptedBase) {
+          await probeApiBase(promptedBase);
+          activeApiBase = promptedBase;
+          hasPromptedForApiBase = false;
+          return promptedBase;
+        }
+
+        throw lastError || new Error("Keine API erreichbar.");
+      })();
+
+      try {
+        return await apiBaseResolutionPromise;
+      } finally {
+        apiBaseResolutionPromise = null;
+      }
+    };
+
+    const normalizeApiChatState = (payload) => {
+      const sourceThreads = Array.isArray(payload?.threads)
+        ? Object.fromEntries(payload.threads.map((thread) => [thread.id, thread]))
+        : payload?.threads && typeof payload.threads === "object"
+          ? payload.threads
+          : payload?.thread && typeof payload.thread === "object" && payload.thread.id
+            ? { [payload.thread.id]: payload.thread }
+            : {};
+
+      return {
+        threads: Object.fromEntries(
+          Object.keys(sourceThreads).map((threadId) => [threadId, normalizeChatThread(threadId, sourceThreads[threadId])])
+        )
+      };
+    };
+
+    const buildChatApiHeaders = (needsAdmin = false) => {
+      const headers = {
+        "Content-Type": "application/json"
+      };
+      const token = getStoredAdminApiToken();
+
+      if (needsAdmin && token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      return headers;
+    };
+
+    const requestChatApi = async (path, { method = "GET", body, admin = false } = {}) => {
+      const executeRequest = async (base) => {
+        const response = await fetch(buildApiUrl(base, path), {
+          method,
+          headers: buildChatApiHeaders(admin),
+          body: body ? JSON.stringify(body) : undefined
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          const error = new Error(payload?.error || "Chat-API Fehler");
+          error.status = response.status;
+          throw error;
+        }
+
+        return payload;
+      };
+
+      const primaryBase = await resolveApiBase();
+
+      try {
+        return await executeRequest(primaryBase);
+      } catch (error) {
+        const shouldRetry = !admin && (!error?.status || error.status === 404);
+
+        if (!shouldRetry) {
+          throw error;
+        }
+
+        const nextBase = await resolveApiBase({ force: true });
+
+        if (nextBase === primaryBase) {
+          throw error;
+        }
+
+        return executeRequest(nextBase);
+      }
+    };
+
+    const buildAccountApiHeaders = () => {
+      const headers = {
+        "Content-Type": "application/json"
+      };
+      const token = getStoredAccountApiToken();
+
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      return headers;
+    };
+
+    const requestAccountApi = async (path, { method = "GET", body } = {}) => {
+      const executeRequest = async (base) => {
+        const response = await fetch(buildApiUrl(base, path), {
+          method,
+          headers: buildAccountApiHeaders(),
+          body: body ? JSON.stringify(body) : undefined
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          const error = new Error(payload?.error || "Konto-API Fehler");
+          error.status = response.status;
+          throw error;
+        }
+
+        return payload;
+      };
+
+      const primaryBase = await resolveApiBase();
+
+      try {
+        return await executeRequest(primaryBase);
+      } catch (error) {
+        const shouldRetry = !error?.status || error.status === 404;
+
+        if (!shouldRetry) {
+          throw error;
+        }
+
+        const nextBase = await resolveApiBase({ force: true });
+
+        if (nextBase === primaryBase) {
+          throw error;
+        }
+
+        return executeRequest(nextBase);
+      }
+    };
+
+    const applyAuthenticatedUser = (payload) => {
+      if (typeof payload?.token === "string" && payload.token) {
+        setStoredAccountApiToken(payload.token);
+      }
+
+      return setCurrentUser(payload?.user);
+    };
+
+    const clearAccountSession = ({ resetForm = false } = {}) => {
+      setStoredAccountApiToken("");
+      setCurrentUser(null);
+
+      if (resetForm) {
+        accountAuthForm?.reset();
+      }
+    };
+
+    const handleAccountApiError = (error, fallbackMessage) => {
+      if (error?.status === 401) {
+        clearAccountSession({ resetForm: true });
+        setAuthMode("login");
+        renderAccount();
+        setFeedback("Deine Sitzung ist abgelaufen. Bitte logge dich erneut ein.", "error");
+        return true;
+      }
+
+      setFeedback(error?.message || fallbackMessage, "error");
+      return false;
+    };
+
+    const hydrateAccountSession = async () => {
+      if (!getStoredAccountApiToken()) {
+        setCurrentUser(null);
+        return null;
+      }
+
+      try {
+        const payload = await requestAccountApi("/account/me");
+        return setCurrentUser(payload?.user);
+      } catch (error) {
+        if (error?.status === 401) {
+          clearAccountSession({ resetForm: true });
+          setAuthMode("login");
+          return null;
+        }
+
+        setFeedback(error?.message || "Konto konnte nicht geladen werden.", "error");
+        return getCurrentUser();
+      }
+    };
+
+    const ensureAdminApiSession = async () => {
+      const existingToken = getStoredAdminApiToken();
+
+      if (existingToken) {
+        return existingToken;
+      }
+
+      const error = new Error("Admin-Session fehlt.");
+      error.status = 401;
+      throw error;
+    };
+
+    const requestAdminApi = async (path, options = {}) => {
+      try {
+        await ensureAdminApiSession();
+        return await requestChatApi(path, {
+          ...options,
+          admin: true
+        });
+      } catch (error) {
+        if (error?.status !== 401) {
+          throw error;
+        }
+
+        setStoredAdminApiToken("");
+        setAdminSession(false);
+        renderAdminState();
+        throw error;
+      }
+    };
+
+    const requestAdminChatApi = (path, options = {}) => requestAdminApi(path, options);
+
+    const loadChatStateFromApi = async () => {
+      if (isAdminLoggedIn()) {
+        const payload = await requestAdminChatApi("/admin/chat/threads");
+        chatDataSource = "remote-admin";
+        return normalizeApiChatState(payload);
+      }
+
+      const threadId = getVisitorThreadId();
+
+      if (!threadId) {
+        chatDataSource = "remote-visitor";
+        return { threads: {} };
+      }
+
+      try {
+        const payload = await requestChatApi(`/chat/threads/${encodeURIComponent(threadId)}`);
+        chatDataSource = "remote-visitor";
+        return normalizeApiChatState(payload);
+      } catch (error) {
+        if (error?.status === 404) {
+          setVisitorThreadId("");
+          chatDataSource = "remote-visitor";
+          return { threads: {} };
+        }
+
+        throw error;
+      }
+    };
+
+    const loadPreferredChatState = async () => {
+      try {
+        return await loadChatStateFromApi();
+      } catch (error) {
+        chatDataSource = "local";
+        return loadChatState();
+      }
+    };
+
+    const getSortedChatThreads = (state) =>
+      Object.values(state.threads).sort((left, right) => getTimestamp(right.updatedAt) - getTimestamp(left.updatedAt));
+
+    const getVisitorThreadId = () => window.sessionStorage.getItem(CHAT_VISITOR_THREAD_STORAGE_KEY) || "";
+
+    const setVisitorThreadId = (threadId) => {
+      if (!threadId) {
+        window.sessionStorage.removeItem(CHAT_VISITOR_THREAD_STORAGE_KEY);
+        return;
+      }
+
+      window.sessionStorage.setItem(CHAT_VISITOR_THREAD_STORAGE_KEY, threadId);
+    };
+
+    const getVisitorThread = (state) => {
+      const threadId = getVisitorThreadId();
+      return threadId && state.threads[threadId] ? state.threads[threadId] : null;
+    };
+
+    const countUnreadMessages = (thread, viewer) =>
+      (thread?.messages || []).filter((message) =>
+        viewer === "admin"
+          ? message.author === "visitor" && !message.readByAdmin
+          : message.author === "admin" && !message.readByVisitor
+      ).length;
+
+    const countOpenAdminThreads = (threads) =>
+      threads.filter((thread) => countUnreadMessages(thread, "admin") > 0).length;
+
+    const getChatThreadPreview = (thread) => {
+      const lastMessage = thread?.messages?.[thread.messages.length - 1];
+
+      if (!lastMessage) {
+        return "Noch keine Nachrichten.";
+      }
+
+      const preview = `${lastMessage.author === "admin" ? "Admin" : thread.visitorName}: ${lastMessage.text}`;
+      return preview.length > 92 ? `${preview.slice(0, 89)}...` : preview;
+    };
+
+    const markThreadAsRead = (thread, viewer) => {
+      if (!thread) {
+        return false;
+      }
+
+      let didChange = false;
+
+      thread.messages.forEach((message) => {
+        if (viewer === "admin" && message.author === "visitor" && !message.readByAdmin) {
+          message.readByAdmin = true;
+          didChange = true;
+        }
+
+        if (viewer === "visitor" && message.author === "admin" && !message.readByVisitor) {
+          message.readByVisitor = true;
+          didChange = true;
+        }
+      });
+
+      return didChange;
+    };
+
+    const setChatFeedback = (message, type = "") => {
+      if (!chatFeedback) {
+        return;
+      }
+
+      chatFeedback.textContent = message;
+      chatFeedback.hidden = !message;
+      chatFeedback.classList.remove("is-error", "is-success");
+
+      if (type) {
+        chatFeedback.classList.add(type === "error" ? "is-error" : "is-success");
+      }
+    };
+
+    const syncChatLaunchState = (isOpen) => {
+      chatLaunchButtons.forEach((button) => {
+        button.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      if (chatToggleButton) {
+        chatToggleButton.classList.toggle("is-open", isOpen);
+      }
+    };
+
+    const openChatPanel = () => {
+      if (!chatPanel || !chatBackdrop) {
+        return;
+      }
+
+      chatPanel.hidden = false;
+      chatPanel.setAttribute("aria-hidden", "false");
+      chatBackdrop.hidden = false;
+      document.body.classList.add("chat-open");
+      syncChatLaunchState(true);
+      renderChatUi();
+
+      window.setTimeout(() => chatMessageInput?.focus(), 40);
+    };
+
+    const closeChatPanel = () => {
+      if (!chatPanel || !chatBackdrop) {
+        return;
+      }
+
+      chatPanel.hidden = true;
+      chatPanel.setAttribute("aria-hidden", "true");
+      chatBackdrop.hidden = true;
+      document.body.classList.remove("chat-open");
+      syncChatLaunchState(false);
+    };
+
+    const handleChatLaunch = (button) => {
+      if (button === chatToggleButton && !chatPanel?.hidden) {
+        closeChatPanel();
+        return;
+      }
+
+      openChatPanel();
+    };
+
+    const renderChatMessages = (container, thread, emptyMessage) => {
+      if (!container) {
+        return;
+      }
+
+      container.innerHTML = "";
+
+      if (!thread || !thread.messages.length) {
+        container.appendChild(createNode("p", "account-empty-state", emptyMessage));
+        return;
+      }
+
+      thread.messages.forEach((message) => {
+        const item = createNode("article", `chat-message is-${message.author}`);
+        const meta = createNode("div", "chat-message-meta");
+        const author = createNode("span", "", message.author === "admin" ? "Admin" : thread.visitorName);
+        const time = createNode("time", "", formatDate(message.createdAt));
+        const text = createNode("p", "chat-message-text", message.text);
+
+        time.dateTime = message.createdAt;
+        meta.append(author, time);
+        item.append(meta, text);
+        container.appendChild(item);
+      });
+    };
+
+    function renderPublicChat(state) {
+      if (!chatMessages) {
+        return false;
+      }
+
+      const currentUser = getCurrentUser();
+      const visitorThread = getVisitorThread(state);
+      let didChange = false;
+
+      if (!chatPanel?.hidden && visitorThread) {
+        didChange = markThreadAsRead(visitorThread, "visitor") || didChange;
+      }
+
+      if (chatNameInput) {
+        const fallbackName = currentUser?.name || currentUser?.email?.split("@")[0] || "";
+        const nextName = visitorThread?.visitorName || fallbackName;
+
+        if ((!chatNameInput.value || visitorThread) && nextName) {
+          chatNameInput.value = nextName;
+        }
+      }
+
+      const unreadCount = countUnreadMessages(visitorThread, "visitor");
+
+      if (chatUnreadBadge) {
+        chatUnreadBadge.hidden = unreadCount === 0;
+        chatUnreadBadge.textContent = unreadCount > 9 ? "9+" : String(unreadCount);
+      }
+
+      if (chatStatus) {
+        if (visitorThread?.messages.length) {
+          chatStatus.textContent = unreadCount
+            ? `${formatCount(unreadCount, "neue Antwort", "neue Antworten")} im Website-Chat. Letzte Aktivitaet ${formatDate(visitorThread.updatedAt)}.`
+            : `Letzte Aktivitaet ${formatDate(visitorThread.updatedAt)}. Antworten erscheinen direkt im Website-Chat.`;
+        } else {
+          chatStatus.textContent = "Schreibe hier deine Nachricht. Antworten erscheinen direkt im Website-Chat.";
+        }
+      }
+
+      renderChatMessages(chatMessages, visitorThread, "Noch keine Nachrichten. Starte den Chat mit deiner ersten Frage.");
+      return didChange;
+    }
+
+    function renderAdminChat(state) {
+      if (!adminChatThreadList || !adminChatMessageList) {
+        return false;
+      }
+
+      const threads = getSortedChatThreads(state);
+
+      if (!threads.some((thread) => thread.id === activeAdminChatThreadId)) {
+        activeAdminChatThreadId = threads[0]?.id || "";
+      }
+
+      const activeThread = activeAdminChatThreadId ? state.threads[activeAdminChatThreadId] : null;
+      let didChange = false;
+
+      if (isAdminLoggedIn() && activeThread) {
+        didChange = markThreadAsRead(activeThread, "admin") || didChange;
+      }
+
+      if (adminChatThreadCount) {
+        adminChatThreadCount.textContent = formatCount(threads.length, "Chat", "Chats");
+      }
+
+      if (adminChatUnreadCount) {
+        adminChatUnreadCount.textContent = formatCount(
+          countOpenAdminThreads(threads),
+          "offener Chat",
+          "offene Chats"
+        );
+      }
+
+      adminChatThreadList.innerHTML = "";
+
+      if (!threads.length) {
+        adminChatThreadList.appendChild(createNode("p", "account-empty-state", "Noch kein Chat gestartet."));
+      } else {
+        threads.forEach((thread) => {
+          const button = createNode("button", "admin-chat-thread");
+          const top = createNode("div", "admin-chat-thread-top");
+          const name = createNode("strong", "", thread.visitorName);
+          const meta = createNode("span", "admin-chat-thread-meta", formatDate(thread.updatedAt));
+          const preview = createNode("p", "admin-chat-thread-preview", getChatThreadPreview(thread));
+          const unreadCount = countUnreadMessages(thread, "admin");
+
+          button.type = "button";
+          button.dataset.chatThreadId = thread.id;
+          button.classList.toggle("is-active", thread.id === activeAdminChatThreadId);
+
+          top.append(name, meta);
+          button.append(top, preview);
+
+          if (unreadCount) {
+            button.appendChild(
+              createNode("span", "admin-chat-thread-badge", unreadCount > 9 ? "9+" : String(unreadCount))
+            );
+          }
+
+          adminChatThreadList.appendChild(button);
+        });
+      }
+
+      if (!activeThread) {
+        if (adminChatDetailTitle) {
+          adminChatDetailTitle.textContent = "Noch kein Chat gestartet";
+        }
+
+        if (adminChatDetailMeta) {
+          adminChatDetailMeta.textContent = "Sobald ein Besucher schreibt, erscheint der Verlauf hier.";
+        }
+
+        renderChatMessages(adminChatMessageList, null, "Noch keine Chat-Nachrichten vorhanden.");
+
+        if (adminChatReplyForm) {
+          adminChatReplyForm.hidden = true;
+        }
+
+        return didChange;
+      }
+
+      if (adminChatDetailTitle) {
+        adminChatDetailTitle.textContent = activeThread.visitorName;
+      }
+
+      if (adminChatDetailMeta) {
+        adminChatDetailMeta.textContent = `Gestartet ${formatDate(activeThread.createdAt)}. Letzte Aktivitaet ${formatDate(activeThread.updatedAt)}.`;
+      }
+
+      renderChatMessages(adminChatMessageList, activeThread, "Noch keine Chat-Nachrichten vorhanden.");
+
+      if (adminChatReplyForm) {
+        adminChatReplyForm.hidden = !isAdminLoggedIn();
+      }
+
+      return didChange;
+    }
+
+    const syncRemoteReadState = async (state, publicChanged, adminChanged) => {
+      if (chatDataSource === "local") {
+        if (publicChanged || adminChanged) {
+          saveChatState(state);
+        }
+        return;
+      }
+
+      const syncTasks = [];
+      const visitorThreadId = getVisitorThreadId();
+
+      if (publicChanged && visitorThreadId) {
+        syncTasks.push(
+          requestChatApi(`/chat/threads/${encodeURIComponent(visitorThreadId)}/read`, {
+            method: "POST"
+          }).catch(() => undefined)
+        );
+      }
+
+      if (adminChanged && activeAdminChatThreadId && isAdminLoggedIn()) {
+        syncTasks.push(
+          requestAdminChatApi(`/admin/chat/threads/${encodeURIComponent(activeAdminChatThreadId)}/read`, {
+            method: "POST"
+          })
+            .catch((error) => {
+              if (error?.status === 401) {
+                setStoredAdminApiToken("");
+              }
+            })
+        );
+      }
+
+      if (syncTasks.length) {
+        await Promise.all(syncTasks);
+      }
+    };
+
+    async function renderChatUi(options = {}) {
+      const { forceRefresh = true } = options;
+
+      if (chatSyncPromise && !forceRefresh) {
+        return chatSyncPromise;
+      }
+
+      const run = async () => {
+        const chatState = forceRefresh ? await loadPreferredChatState() : loadChatState();
+        const publicChanged = renderPublicChat(chatState);
+        const adminChanged = renderAdminChat(chatState);
+
+        if (publicChanged || adminChanged) {
+          await syncRemoteReadState(chatState, publicChanged, adminChanged);
+        }
+      };
+
+      chatSyncPromise = run().finally(() => {
+        chatSyncPromise = null;
+      });
+
+      return chatSyncPromise;
+    }
+
+    const startChatPolling = () => {
+      if (chatPollTimer) {
+        window.clearInterval(chatPollTimer);
+      }
+
+      chatPollTimer = window.setInterval(() => {
+        renderChatUi({ forceRefresh: true });
+      }, CHAT_POLL_INTERVAL_MS);
+    };
+
+    const cloneAdminContent = (content) => ({
+      texts: { ...content.texts },
+      images: Object.fromEntries(
+        Object.entries(content.images).map(([key, value]) => [
+          key,
+          {
+            ...value
+          }
+        ])
+      )
+    });
+
+    const getDefaultAdminContent = () => ({
+      texts: Object.fromEntries(
+        adminTextDefinitions.map((definition) => [definition.key, definition.defaultValue])
+      ),
+      images: Object.fromEntries(
+        adminImageDefinitions.map((definition) => [
+          definition.key,
+          {
+            ...definition.defaultValue
+          }
+        ])
+      )
+    });
+
+    const normalizeAdminContent = (content = {}) => {
+      const defaults = getDefaultAdminContent();
+
+      return {
+        texts: adminTextDefinitions.reduce((accumulator, definition) => {
+          const nextValue = content?.texts?.[definition.key];
+          accumulator[definition.key] =
+            typeof nextValue === "string" && nextValue.trim() ? nextValue.trim() : defaults.texts[definition.key];
+          return accumulator;
+        }, {}),
+        images: adminImageDefinitions.reduce((accumulator, definition) => {
+          const nextValue = content?.images?.[definition.key];
+
+          accumulator[definition.key] = {
+            src:
+              typeof nextValue?.src === "string" && nextValue.src
+                ? nextValue.src
+                : defaults.images[definition.key].src,
+            alt:
+              typeof nextValue?.alt === "string" && nextValue.alt.trim()
+                ? nextValue.alt.trim()
+                : defaults.images[definition.key].alt
+          };
+          return accumulator;
+        }, {})
+      };
+    };
+
+    const getAdminContentState = () => {
+      if (!adminContentState) {
+        adminContentState = normalizeAdminContent();
+      }
+
+      return adminContentState;
+    };
+
+    const loadAdminContent = () => cloneAdminContent(getAdminContentState());
+
+    const setAdminContentState = (content) => {
+      adminContentState = normalizeAdminContent(content);
+      return adminContentState;
+    };
+
+    const loadAdminContentFromApi = async (admin = false) => {
+      const payload = admin ? await requestAdminApi("/admin/content") : await requestChatApi("/content");
+      return setAdminContentState(payload?.content);
+    };
+
+    const saveAdminContent = async (content) => {
+      const payload = await requestAdminApi("/admin/content", {
+        method: "POST",
+        body: {
+          content
+        }
+      });
+
+      return setAdminContentState(payload?.content);
+    };
+
+    const resetAdminContent = async () => {
+      const payload = await requestAdminApi("/admin/content", {
+        method: "DELETE"
+      });
+
+      return setAdminContentState(payload?.content);
+    };
+
+    const applyAdminContent = (content) => {
+      const nextContent = normalizeAdminContent(content);
+
+      adminTextDefinitions.forEach((definition) => {
+        const nextValue = nextContent.texts[definition.key];
+        definition.element.textContent =
+          typeof nextValue === "string" ? nextValue : definition.defaultValue;
+      });
+
+      adminImageDefinitions.forEach((definition) => {
+        const nextValue = nextContent.images[definition.key];
+        const nextSrc =
+          typeof nextValue?.src === "string" && nextValue.src
+            ? nextValue.src
+            : definition.defaultValue.src;
+        const nextAlt =
+          typeof nextValue?.alt === "string" ? nextValue.alt : definition.defaultValue.alt;
+
+        definition.element.setAttribute("src", nextSrc);
+        definition.element.setAttribute("alt", nextAlt);
+      });
+    };
+
+    const setAdminFeedback = (message, type = "") => {
+      if (!adminFeedback) {
+        return;
+      }
+
+      adminFeedback.textContent = message;
+      adminFeedback.hidden = !message;
+      adminFeedback.classList.remove("is-error", "is-success");
+
+      if (type) {
+        adminFeedback.classList.add(type === "error" ? "is-error" : "is-success");
+      }
+    };
+
+    const isAdminLoggedIn = () => window.sessionStorage.getItem(ADMIN_SESSION_STORAGE_KEY) === "1";
+
+    const setAdminSession = (isLoggedIn) => {
+      if (isLoggedIn) {
+        window.sessionStorage.setItem(ADMIN_SESSION_STORAGE_KEY, "1");
+        return;
+      }
+
+      window.sessionStorage.removeItem(ADMIN_SESSION_STORAGE_KEY);
+    };
+
+    const openAdminAuthOverlay = () => {
+      if (!adminAuthOverlay || isAdminLoggedIn()) {
+        return;
+      }
+
+      setAdminFeedback("");
+      adminAuthOverlay.hidden = false;
+      adminAuthOverlay.setAttribute("aria-hidden", "false");
+      document.body.classList.add("admin-auth-open");
+
+      window.setTimeout(() => adminNameInput?.focus(), 40);
+    };
+
+    const closeAdminAuthOverlay = () => {
+      if (!adminAuthOverlay) {
+        return;
+      }
+
+      adminAuthOverlay.hidden = true;
+      adminAuthOverlay.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("admin-auth-open");
+
+      if (!isAdminLoggedIn()) {
+        adminLoginForm?.reset();
+      }
+    };
+
+    const sanitizeAdminText = (value) =>
+      value
+        .replace(/\u00A0/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const setInlineAdminEditingState = (isEditable) => {
+      adminTextDefinitions.forEach((definition) => {
+        if (isEditable) {
+          definition.element.setAttribute("contenteditable", "plaintext-only");
+          definition.element.setAttribute("spellcheck", "true");
+          definition.element.setAttribute("tabindex", "0");
+          definition.element.setAttribute("role", "textbox");
+          definition.element.setAttribute("aria-label", `${definition.label} direkt bearbeiten`);
+          return;
+        }
+
+        definition.element.removeAttribute("contenteditable");
+        definition.element.removeAttribute("spellcheck");
+        definition.element.removeAttribute("tabindex");
+        definition.element.removeAttribute("role");
+        definition.element.removeAttribute("aria-label");
+      });
+    };
+
+    const readFileAsDataUrl = (file) =>
+      new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          resolve(typeof reader.result === "string" ? reader.result : "");
+        };
+
+        reader.onerror = () => {
+          reject(new Error("file-read-failed"));
+        };
+
+        reader.readAsDataURL(file);
+      });
+
+    const focusAdminEditorField = (key) => {
+      if (!adminSection || !isAdminLoggedIn()) {
+        return;
+      }
+
+      const targetField = document.querySelector(`[data-admin-image-input-key="${key}"]`);
+
+      if (!targetField) {
+        return;
+      }
+
+      adminSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.setTimeout(() => targetField.focus(), 180);
+    };
+
+    const renderAdminEditor = () => {
+      if (!adminImageEditorList) {
+        return;
+      }
+
+      if (!adminDraftContent) {
+        adminDraftContent = cloneAdminContent(loadAdminContent());
+      }
+
+      adminImageEditorList.innerHTML = "";
+
+      if (adminTextCount) {
+        adminTextCount.textContent = formatCount(adminTextDefinitions.length, "Text", "Texte");
+      }
+
+      if (adminImageCount) {
+        adminImageCount.textContent = formatCount(adminImageDefinitions.length, "Bild", "Bilder");
+      }
+
+      adminImageDefinitions.forEach((definition) => {
+        const imageValue = adminDraftContent.images[definition.key] || definition.defaultValue;
+        const item = createNode("article", "admin-editor-item admin-editor-item-image");
+        const header = createNode("div", "admin-editor-item-header");
+        const copy = createNode("div", "admin-editor-copy");
+        const label = createNode("strong", "admin-editor-label", definition.label);
+        const meta = createNode("span", "admin-editor-meta", definition.group);
+        const preview = createNode("div", "admin-image-preview");
+        const previewImage = createNode("img");
+        const altField = createNode("label", "account-field admin-editor-field");
+        const altLabel = createNode("span", "", "Alt-Text");
+        const altInput = createNode("input");
+        const fileField = createNode("label", "account-field admin-editor-field");
+        const fileLabel = createNode("span", "", "Bilddatei");
+        const fileInput = createNode("input");
+        const actions = createNode("div", "account-form-actions");
+        const resetButton = createNode("button", "button button-ghost button-small admin-image-reset", "Originalbild");
+
+        previewImage.src = imageValue.src;
+        previewImage.alt = imageValue.alt;
+        previewImage.dataset.adminImagePreviewKey = definition.key;
+
+        altInput.type = "text";
+        altInput.value = imageValue.alt;
+        altInput.placeholder = "Beschreibender Alt-Text";
+        altInput.dataset.adminImageAltKey = definition.key;
+
+        fileInput.type = "file";
+        fileInput.accept = "image/*";
+        fileInput.dataset.adminImageInputKey = definition.key;
+
+        resetButton.type = "button";
+        resetButton.dataset.adminResetImageKey = definition.key;
+
+        copy.append(label, meta);
+        header.append(copy);
+        preview.append(previewImage);
+        altField.append(altLabel, altInput);
+        fileField.append(fileLabel, fileInput);
+        actions.append(resetButton);
+        item.append(header, preview, altField, fileField, actions);
+        adminImageEditorList.appendChild(item);
+      });
+    };
+
+    const renderAdminState = () => {
+      const loggedIn = isAdminLoggedIn();
+
+      document.body.classList.toggle("admin-active", loggedIn);
+      setInlineAdminEditingState(loggedIn);
+
+      if (adminSection) {
+        adminSection.hidden = !loggedIn;
+      }
+
+      if (adminTitle) {
+        adminTitle.textContent = loggedIn
+          ? "Admin-Funktionen fuer die Live-Seite sind aktiv"
+          : "Admin-Funktionen fuer die Live-Seite";
+      }
+
+      if (adminStatusBadge) {
+        adminStatusBadge.textContent = loggedIn ? "Freigeschaltet" : "Gesperrt";
+        adminStatusBadge.classList.toggle("is-active", loggedIn);
+      }
+
+      if (adminStatusText) {
+        adminStatusText.textContent = loggedIn
+          ? "Markierte Texte koennen jetzt direkt in der Seite bearbeitet werden. Bilder steuerst du weiter unten ueber den Live-Admin."
+          : "Melde dich an, um Texte und Bilder zu bearbeiten und die Aenderungen direkt in der Vorschau zu sehen.";
+      }
+
+      if (adminEditor) {
+        adminEditor.hidden = !loggedIn;
+      }
+
+      if (adminLoginForm) {
+        adminLoginForm.classList.toggle("is-logged-in", loggedIn);
+      }
+
+      if (adminNameInput) {
+        adminNameInput.disabled = loggedIn;
+        adminNameInput.value = loggedIn ? "" : adminNameInput.value;
+      }
+
+      if (adminEmailInput) {
+        adminEmailInput.disabled = loggedIn;
+        adminEmailInput.value = loggedIn ? "" : adminEmailInput.value;
+      }
+
+      if (adminPasswordInput) {
+        adminPasswordInput.disabled = loggedIn;
+        adminPasswordInput.value = loggedIn ? "********" : "";
+      }
+
+      if (adminLoginButton) {
+        adminLoginButton.hidden = loggedIn;
+      }
+
+      if (adminLogoutButton) {
+        adminLogoutButton.hidden = !loggedIn;
+      }
+
+      if (loggedIn) {
+        adminDraftContent = cloneAdminContent(getAdminContentState());
+        renderAdminEditor();
+        closeAdminAuthOverlay();
+      } else {
+        adminDraftContent = null;
+      }
+
+      renderChatUi();
+    };
+
+    const finalizeInlineAdminTexts = () => {
+      if (!adminDraftContent) {
+        return;
+      }
+
+      adminTextDefinitions.forEach((definition) => {
+        const sourceValue =
+          definition.element.textContent || adminDraftContent.texts[definition.key] || definition.defaultValue;
+        const finalValue = sanitizeAdminText(sourceValue) || definition.defaultValue;
+
+        adminDraftContent.texts[definition.key] = finalValue;
+        definition.element.textContent = finalValue;
+      });
+    };
+
+    const setAuthMode = (nextMode) => {
+      authMode = nextMode === "register" ? "register" : "login";
+
+      authModeButtons.forEach((button) => {
+        const isActive = button.dataset.authMode === authMode;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      if (accountNameField) {
+        accountNameField.hidden = authMode !== "register";
+      }
+
+      if (accountNameInput) {
+        accountNameInput.required = authMode === "register";
+      }
+
+      if (accountPasswordInput) {
+        accountPasswordInput.autocomplete = authMode === "register" ? "new-password" : "current-password";
+      }
+
+      if (accountSubmitButton) {
+        accountSubmitButton.textContent = authMode === "register" ? "Konto anlegen" : "Einloggen";
+      }
+    };
+
+    const updateModelButtons = (currentUser) => {
+      const savedModelIds = new Set((currentUser?.savedModels || []).map((model) => model.id));
+
+      saveModelButtons.forEach((button) => {
+        const modelId = button.dataset.modelId;
+        const isSaved = savedModelIds.has(modelId);
+
+        button.textContent = isSaved ? "Gemerkt" : "Modell merken";
+        button.classList.toggle("is-saved", isSaved);
+        button.setAttribute("aria-pressed", String(isSaved));
+      });
+    };
+
+    const renderSavedModels = (currentUser) => {
+      if (!savedModelList || !savedModelCount) {
+        return;
+      }
+
+      const savedModels = currentUser?.savedModels || [];
+      savedModelCount.textContent = formatCount(savedModels.length, "Modell", "Modelle");
+      savedModelList.innerHTML = "";
+
+      if (!savedModels.length) {
+        savedModelList.appendChild(createNode("p", "account-empty-state", "Noch keine Modelle gespeichert."));
+        return;
+      }
+
+      savedModels.forEach((model) => {
+        const item = createNode("article", "saved-model-chip");
+        const info = createNode("div", "saved-model-copy");
+        const title = createNode("strong", "", model.name);
+        const meta = createNode("span", "", `Gespeichert am ${formatDate(model.savedAt)}`);
+        const removeButton = createNode("button", "saved-model-remove", "Entfernen");
+
+        removeButton.type = "button";
+        removeButton.dataset.removeModelId = model.id;
+
+        info.append(title, meta);
+        item.append(info, removeButton);
+        savedModelList.appendChild(item);
+      });
+    };
+
+    const renderNotes = (currentUser) => {
+      if (!noteList || !savedNoteCount) {
+        return;
+      }
+
+      const notes = currentUser?.notes || [];
+      savedNoteCount.textContent = formatCount(notes.length, "Notiz", "Notizen");
+      noteList.innerHTML = "";
+
+      if (!notes.length) {
+        noteList.appendChild(createNode("p", "account-empty-state", "Noch keine Notizen gespeichert."));
+        return;
+      }
+
+      notes.forEach((note) => {
+        const item = createNode("article", "note-item");
+        const text = createNode("p", "note-text", note.text);
+        const footer = createNode("div", "note-item-footer");
+        const meta = createNode("span", "note-date", formatDate(note.createdAt));
+        const removeButton = createNode("button", "note-remove", "Löschen");
+
+        removeButton.type = "button";
+        removeButton.dataset.noteId = note.id;
+
+        footer.append(meta, removeButton);
+        item.append(text, footer);
+        noteList.appendChild(item);
+      });
+    };
+
+    const renderAccount = () => {
+      const currentUser = getCurrentUser();
+      const isLoggedIn = Boolean(currentUser);
+
+      if (accountTitle) {
+        accountTitle.textContent = isLoggedIn
+          ? `Hallo ${currentUser.name || currentUser.email}`
+          : authMode === "register"
+            ? "Konto anlegen"
+            : "Einloggen oder Konto anlegen";
+      }
+
+      if (accountStatusBadge) {
+        accountStatusBadge.textContent = isLoggedIn ? "Eingeloggt" : "Nicht eingeloggt";
+        accountStatusBadge.classList.toggle("is-active", isLoggedIn);
+      }
+
+      if (accountStorage) {
+        accountStorage.hidden = !isLoggedIn;
+      }
+
+      if (accountStatusText) {
+        accountStatusText.textContent = isLoggedIn
+          ? "Du kannst jetzt Pool-Modelle merken, Notizen speichern und deine Auswahl auf anderen Geraeten wieder aufrufen."
+          : "Melde dich an, um Pool-Modelle und eigene Notizen serverseitig zu speichern.";
+      }
+
+      if (authModeToggle) {
+        authModeToggle.hidden = isLoggedIn;
+      }
+
+      if (accountNameField) {
+        accountNameField.hidden = isLoggedIn || authMode !== "register";
+      }
+
+      if (accountAuthForm) {
+        accountAuthForm.classList.toggle("is-logged-in", isLoggedIn);
+      }
+
+      if (accountEmailInput) {
+        accountEmailInput.disabled = isLoggedIn;
+        accountEmailInput.value = isLoggedIn ? currentUser.email : accountEmailInput.value;
+      }
+
+      if (accountPasswordInput) {
+        accountPasswordInput.disabled = isLoggedIn;
+        accountPasswordInput.value = isLoggedIn ? "******" : "";
+      }
+
+      if (accountNameInput) {
+        accountNameInput.disabled = isLoggedIn;
+        accountNameInput.value = isLoggedIn ? currentUser.name : accountNameInput.value;
+      }
+
+      if (accountSubmitButton) {
+        accountSubmitButton.hidden = isLoggedIn;
+      }
+
+      if (accountLogoutButton) {
+        accountLogoutButton.hidden = !isLoggedIn;
+      }
+
+      if (accountStorageNote) {
+        accountStorageNote.textContent = isLoggedIn
+          ? "Hinweis: Deine gespeicherten Inhalte liegen jetzt auf der Holidaily-API und stehen auf anderen Geraeten bereit, solange dieselbe API verwendet wird."
+          : "Hinweis: Login, gemerkte Modelle und Notizen werden ueber die Holidaily-API gespeichert und sind dadurch nicht mehr an diesen Browser gebunden.";
+      }
+
+      renderSavedModels(currentUser);
+      renderNotes(currentUser);
+      updateModelButtons(currentUser);
+      renderChatUi();
+    };
+
+    const requireLogin = (message) => {
+      setFeedback(message, "error");
+
+      if (accountSection) {
+        accountSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      if (accountEmailInput) {
+        window.setTimeout(() => accountEmailInput.focus(), 180);
+      }
+    };
+
+    saveModelButtons.forEach((button) => {
+      button.addEventListener("click", async () => {
+        const activeUser = getCurrentUser();
+        const modelCard = button.closest(".offer-card");
+        const modelId = button.dataset.modelId || modelCard?.dataset.modelId || "";
+        const modelName = modelCard?.dataset.modelName || "Pool-Modell";
+
+        if (!activeUser) {
+          requireLogin("Bitte zuerst einloggen, damit du Modelle speichern kannst.");
+          return;
+        }
+
+        button.disabled = true;
+
+        try {
+          const savedModel = activeUser.savedModels.find((model) => model.id === modelId);
+          const payload = await requestAccountApi("/account/saved-models/toggle", {
+            method: "POST",
+            body: {
+              id: modelId,
+              name: modelName
+            }
+          });
+
+          setCurrentUser(payload?.user);
+          setFeedback(
+            payload?.saved === false || savedModel
+              ? `${modelName} wurde aus deiner Merkliste entfernt.`
+              : `${modelName} wurde gespeichert.`,
+            "success"
+          );
+          renderAccount();
+        } catch (error) {
+          handleAccountApiError(error, "Modell konnte nicht gespeichert werden.");
+        } finally {
+          button.disabled = false;
+        }
+      });
+    });
+
+    authModeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setFeedback("");
+        setAuthMode(button.dataset.authMode || "login");
+        renderAccount();
+      });
+    });
+
+    if (accountAuthForm) {
+      accountAuthForm.addEventListener(
+        "submit",
+        async (event) => {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          if (getCurrentUser()) {
+            return;
+          }
+
+          const email = normalizeEmail(accountEmailInput?.value || "");
+          const password = accountPasswordInput?.value || "";
+          const name = (accountNameInput?.value || "").trim();
+
+          if (!email) {
+            setFeedback("Bitte gib eine gueltige E-Mail-Adresse ein.", "error");
+            return;
+          }
+
+          if (password.length < 6) {
+            setFeedback("Das Passwort muss mindestens 6 Zeichen lang sein.", "error");
+            return;
+          }
+
+          accountSubmitButton.disabled = true;
+
+          try {
+            const payload = await requestAccountApi(authMode === "register" ? "/account/register" : "/account/login", {
+              method: "POST",
+              body: authMode === "register" ? { email, password, name } : { email, password }
+            });
+
+            applyAuthenticatedUser(payload);
+            setFeedback(authMode === "register" ? "Konto angelegt und direkt eingeloggt." : "Erfolgreich eingeloggt.", "success");
+            renderAccount();
+          } catch (error) {
+            handleAccountApiError(error, "Anmeldung fehlgeschlagen.");
+          } finally {
+            accountSubmitButton.disabled = false;
+          }
+        },
+        true
+      );
+    }
+
+    if (accountLogoutButton) {
+      accountLogoutButton.addEventListener(
+        "click",
+        async (event) => {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          try {
+            await requestAccountApi("/account/logout", {
+              method: "POST"
+            });
+          } catch (error) {
+            if (error?.status && error.status !== 401) {
+              setFeedback(error?.message || "Abmeldung fehlgeschlagen.", "error");
+              return;
+            }
+          }
+
+          clearAccountSession({ resetForm: true });
+          setAuthMode("login");
+          setFeedback("Du wurdest abgemeldet.", "success");
+          renderAccount();
+        },
+        true
+      );
+    }
+
+    if (noteForm) {
+      noteForm.addEventListener(
+        "submit",
+        async (event) => {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          const activeUser = getCurrentUser();
+          const noteText = (noteInput?.value || "").trim();
+
+          if (!activeUser) {
+            requireLogin("Bitte zuerst einloggen, damit du Notizen speichern kannst.");
+            return;
+          }
+
+          if (noteText.length < 3) {
+            setFeedback("Bitte schreibe eine etwas aussagekraeftigere Notiz.", "error");
+            return;
+          }
+
+          const submitButton = noteForm.querySelector('button[type="submit"]');
+          if (submitButton instanceof HTMLButtonElement) {
+            submitButton.disabled = true;
+          }
+
+          try {
+            const payload = await requestAccountApi("/account/notes", {
+              method: "POST",
+              body: {
+                text: noteText
+              }
+            });
+
+            setCurrentUser(payload?.user);
+            noteForm.reset();
+            setFeedback("Notiz gespeichert.", "success");
+            renderAccount();
+          } catch (error) {
+            handleAccountApiError(error, "Notiz konnte nicht gespeichert werden.");
+          } finally {
+            if (submitButton instanceof HTMLButtonElement) {
+              submitButton.disabled = false;
+            }
+          }
+        },
+        true
+      );
+    }
+
+    if (savedModelList) {
+      savedModelList.addEventListener(
+        "click",
+        async (event) => {
+          const removeButton = event.target.closest("[data-remove-model-id]");
+
+          if (!removeButton) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          const activeUser = getCurrentUser();
+          const modelId = removeButton.dataset.removeModelId || "";
+          const savedModel = activeUser?.savedModels.find((model) => model.id === modelId);
+
+          if (!activeUser || !savedModel) {
+            return;
+          }
+
+          removeButton.disabled = true;
+
+          try {
+            const payload = await requestAccountApi("/account/saved-models/toggle", {
+              method: "POST",
+              body: {
+                id: savedModel.id,
+                name: savedModel.name
+              }
+            });
+
+            setCurrentUser(payload?.user);
+            setFeedback("Modell aus der Merkliste entfernt.", "success");
+            renderAccount();
+          } catch (error) {
+            handleAccountApiError(error, "Modell konnte nicht entfernt werden.");
+          } finally {
+            removeButton.disabled = false;
+          }
+        },
+        true
+      );
+    }
+
+    if (noteList) {
+      noteList.addEventListener(
+        "click",
+        async (event) => {
+          const removeButton = event.target.closest("[data-note-id]");
+
+          if (!removeButton) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          removeButton.disabled = true;
+
+          try {
+            const payload = await requestAccountApi(`/account/notes/${encodeURIComponent(removeButton.dataset.noteId || "")}`, {
+              method: "DELETE"
+            });
+
+            setCurrentUser(payload?.user);
+            setFeedback("Notiz geloescht.", "success");
+            renderAccount();
+          } catch (error) {
+            handleAccountApiError(error, "Notiz konnte nicht geloescht werden.");
+          } finally {
+            removeButton.disabled = false;
+          }
+        },
+        true
+      );
+    }
+
+    adminEditableElements.forEach((element) => {
+      const label = element.dataset.adminLabel || "Inhalt";
+      const type = element.dataset.adminType || "text";
+      element.setAttribute(
+        "title",
+        type === "image" ? `${label} unten im Test-Admin austauschen` : `${label} direkt auf der Seite bearbeiten`
+      );
+
+      if (type === "image") {
+        element.addEventListener("click", (event) => {
+          if (!isAdminLoggedIn()) {
+            return;
+          }
+
+          if (event.target.closest("a, button, input, textarea, label")) {
+            return;
+          }
+
+          const key = element.dataset.adminKey || "";
+
+          if (!key) {
+            return;
+          }
+
+          focusAdminEditorField(key);
+        });
+      }
+    });
+
+    adminTextDefinitions.forEach((definition) => {
+      definition.element.addEventListener("keydown", (event) => {
+        if (!isAdminLoggedIn()) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          event.preventDefault();
+          definition.element.textContent = adminDraftContent?.texts?.[definition.key] ?? definition.defaultValue;
+          definition.element.blur();
+        }
+
+        if (event.key === "Enter" && /^H[1-6]$/.test(definition.element.tagName)) {
+          event.preventDefault();
+          definition.element.blur();
+        }
+      });
+
+      definition.element.addEventListener("focus", () => {
+        if (!isAdminLoggedIn()) {
+          return;
+        }
+
+        setAdminFeedback(`${definition.label} wird direkt in der Seite bearbeitet. Danach unten speichern.`, "success");
+      });
+
+      definition.element.addEventListener("input", () => {
+        if (!isAdminLoggedIn()) {
+          return;
+        }
+
+        if (!adminDraftContent) {
+          adminDraftContent = cloneAdminContent(loadAdminContent());
+        }
+
+        adminDraftContent.texts[definition.key] = definition.element.textContent;
+      });
+
+      definition.element.addEventListener("blur", () => {
+        if (!isAdminLoggedIn()) {
+          return;
+        }
+
+        if (!adminDraftContent) {
+          adminDraftContent = cloneAdminContent(loadAdminContent());
+        }
+
+        const sanitizedValue = sanitizeAdminText(definition.element.textContent || "");
+        const finalValue = sanitizedValue || definition.defaultValue;
+
+        adminDraftContent.texts[definition.key] = finalValue;
+        definition.element.textContent = finalValue;
+      });
+    });
+
+    if (adminSecretTrigger) {
+      adminSecretTrigger.addEventListener("click", () => {
+        if (isAdminLoggedIn()) {
+          return;
+        }
+
+        adminSecretTapCount += 1;
+
+        if (adminSecretTapTimer) {
+          window.clearTimeout(adminSecretTapTimer);
+        }
+
+        if (adminSecretTapCount >= 5) {
+          adminSecretTapCount = 0;
+          openAdminAuthOverlay();
+          return;
+        }
+
+        adminSecretTapTimer = window.setTimeout(() => {
+          adminSecretTapCount = 0;
+          adminSecretTapTimer = 0;
+        }, 2600);
+      });
+    }
+
+    if (adminAuthOverlay) {
+      adminAuthOverlay.addEventListener("click", (event) => {
+        if (!event.target.closest("[data-admin-auth-close]")) {
+          return;
+        }
+
+        closeAdminAuthOverlay();
+      });
+    }
+
+    if (adminAuthCloseButton) {
+      adminAuthCloseButton.addEventListener("click", () => {
+        closeAdminAuthOverlay();
+      });
+    }
+
+    chatLaunchButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        if (Date.now() - lastTouchChatLaunchAt < 700) {
+          event.preventDefault();
+          return;
+        }
+
+        event.preventDefault();
+        handleChatLaunch(button);
+      });
+
+      button.addEventListener("touchend", (event) => {
+        lastTouchChatLaunchAt = Date.now();
+        event.preventDefault();
+        handleChatLaunch(button);
+      });
+    });
+
+    if (chatCloseButton) {
+      chatCloseButton.addEventListener("click", () => {
+        closeChatPanel();
+      });
+    }
+
+    if (chatBackdrop) {
+      chatBackdrop.addEventListener("click", () => {
+        closeChatPanel();
+      });
+    }
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") {
+        return;
+      }
+
+      if (!chatPanel?.hidden) {
+        closeChatPanel();
+      }
+
+      if (!adminAuthOverlay?.hidden) {
+        closeAdminAuthOverlay();
+      }
+    });
+
+    if (adminLoginForm) {
+      adminLoginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const name = normalizeAdminName(adminNameInput?.value || "");
+        const email = normalizeEmail(adminEmailInput?.value || "");
+        const password = adminPasswordInput?.value || "";
+
+        if (!name || !email || !password) {
+          setAdminFeedback("Bitte alle Admin-Zugangsdaten eingeben.", "error");
+          return;
+        }
+
+        adminLoginButton.disabled = true;
+
+        try {
+          const payload = await requestChatApi("/admin/login", {
+            method: "POST",
+            body: {
+              name,
+              email,
+              password
+            }
+          });
+
+          const token = typeof payload?.token === "string" ? payload.token : "";
+
+          if (!token) {
+            throw new Error("Admin-Token fehlt.");
+          }
+
+          setStoredAdminApiToken(token);
+          setAdminSession(true);
+          await loadAdminContentFromApi(true);
+          applyAdminContent(getAdminContentState());
+          setAdminFeedback("Admin-Modus aktiviert. Chat und Inhalte sind jetzt freigeschaltet.", "success");
+          renderAdminState();
+          renderChatUi({ forceRefresh: true });
+        } catch (error) {
+          setStoredAdminApiToken("");
+          setAdminSession(false);
+          setAdminFeedback(
+            error?.status === 401
+              ? "Die Admin-Zugangsdaten stimmen nicht."
+              : "Der zentrale Server ist gerade nicht erreichbar. Falls Frontend und API getrennt laufen, oeffne die Seite einmal mit ?apiBase=https://dein-backend/api.",
+            "error"
+          );
+        } finally {
+          adminLoginButton.disabled = false;
+        }
+      });
+    }
+
+    if (adminLogoutButton) {
+      adminLogoutButton.addEventListener("click", () => {
+        setAdminSession(false);
+        setStoredAdminApiToken("");
+        closeAdminAuthOverlay();
+        adminSecretTapCount = 0;
+
+        if (adminLoginForm) {
+          adminLoginForm.reset();
+        }
+
+        setAdminFeedback("Admin-Modus beendet.", "success");
+        renderAdminState();
+      });
+    }
+
+    if (chatForm) {
+      chatForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const currentUser = getCurrentUser();
+        const message = sanitizeChatMessage(chatMessageInput?.value || "");
+        const fallbackName = currentUser?.name || currentUser?.email?.split("@")[0] || "Besucher";
+        const visitorName = sanitizeChatName(chatNameInput?.value || "") || fallbackName;
+
+        if (message.length < 2) {
+          setChatFeedback("Bitte schreibe eine etwas konkretere Nachricht.", "error");
+          return;
+        }
+
+        try {
+          const threadId = getVisitorThreadId();
+          const payload = threadId
+            ? await requestChatApi(`/chat/threads/${encodeURIComponent(threadId)}/messages`, {
+                method: "POST",
+                body: {
+                  visitorName,
+                  message
+                }
+              })
+            : await requestChatApi("/chat/threads", {
+                method: "POST",
+                body: {
+                  visitorName,
+                  message
+                }
+              });
+
+          const thread = normalizeApiChatState(payload).threads[payload?.thread?.id || threadId];
+
+          if (thread?.id) {
+            setVisitorThreadId(thread.id);
+          }
+
+          chatForm.reset();
+
+          if (chatNameInput && thread?.visitorName) {
+            chatNameInput.value = thread.visitorName;
+          }
+
+          setChatFeedback("Nachricht gesendet. Sie ist jetzt auf allen Admin-Geraeten sichtbar.", "success");
+          await renderChatUi({ forceRefresh: true });
+          chatMessageInput?.focus();
+        } catch (error) {
+          const chatState = loadChatState();
+          const sentAt = new Date().toISOString();
+          let threadId = getVisitorThreadId();
+          let thread = threadId ? chatState.threads[threadId] : null;
+
+          if (!thread) {
+            threadId = createChatEntityId();
+            setVisitorThreadId(threadId);
+            thread = {
+              id: threadId,
+              visitorName: visitorName || "Besucher",
+              createdAt: sentAt,
+              updatedAt: sentAt,
+              messages: []
+            };
+            chatState.threads[threadId] = thread;
+          }
+
+          thread.visitorName = visitorName || thread.visitorName || "Besucher";
+          thread.updatedAt = sentAt;
+          thread.messages.push({
+            id: createChatEntityId(),
+            author: "visitor",
+            text: message,
+            createdAt: sentAt,
+            readByAdmin: false,
+            readByVisitor: true
+          });
+
+          saveChatState(chatState);
+          chatForm.reset();
+
+          if (chatNameInput) {
+            chatNameInput.value = thread.visitorName;
+          }
+
+          setChatFeedback("Nachricht lokal gespeichert. Der zentrale Chat-Server war nicht erreichbar.", "error");
+          await renderChatUi({ forceRefresh: false });
+          chatMessageInput?.focus();
+        }
+      });
+    }
+
+    if (adminChatThreadList) {
+      adminChatThreadList.addEventListener("click", (event) => {
+        const threadButton = event.target.closest("[data-chat-thread-id]");
+
+        if (!threadButton) {
+          return;
+        }
+
+        activeAdminChatThreadId = threadButton.dataset.chatThreadId || "";
+
+        if (adminChatReplyInput) {
+          adminChatReplyInput.value = "";
+        }
+
+        renderChatUi();
+      });
+    }
+
+    if (adminChatReplyForm) {
+      adminChatReplyForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const reply = sanitizeChatMessage(adminChatReplyInput?.value || "");
+
+        if (!isAdminLoggedIn()) {
+          setAdminFeedback("Bitte zuerst den Admin-Modus freischalten.", "error");
+          return;
+        }
+
+        if (!activeAdminChatThreadId) {
+          setAdminFeedback("Bitte zuerst einen Chat auswaehlen.", "error");
+          return;
+        }
+
+        if (reply.length < 2) {
+          setAdminFeedback("Bitte schreibe eine etwas konkretere Antwort.", "error");
+          return;
+        }
+
+        try {
+          const payload = await requestAdminChatApi(`/admin/chat/threads/${encodeURIComponent(activeAdminChatThreadId)}/messages`, {
+            method: "POST",
+            body: {
+              message: reply
+            }
+          });
+          const thread = payload?.thread;
+
+          adminChatReplyForm.reset();
+          setAdminFeedback(`Antwort an ${thread?.visitorName || "den Besucher"} gesendet.`, "success");
+          await renderChatUi({ forceRefresh: true });
+          adminChatReplyInput?.focus();
+        } catch (error) {
+          if (error?.status === 401) {
+            setStoredAdminApiToken("");
+          }
+
+          setAdminFeedback("Antwort konnte nicht an den zentralen Chat-Server gesendet werden.", "error");
+        }
+      });
+    }
+
+    if (adminImageEditorList) {
+      adminImageEditorList.addEventListener("input", (event) => {
+        const input = event.target.closest("[data-admin-image-alt-key]");
+
+        if (!input || !adminDraftContent) {
+          return;
+        }
+
+        const imageKey = input.dataset.adminImageAltKey;
+        adminDraftContent.images[imageKey] = {
+          ...(adminDraftContent.images[imageKey] || {}),
+          alt: input.value
+        };
+
+        applyAdminContent(adminDraftContent);
+      });
+
+      adminImageEditorList.addEventListener("change", async (event) => {
+        const input = event.target.closest("[data-admin-image-input-key]");
+
+        if (!input || !adminDraftContent) {
+          return;
+        }
+
+        const imageKey = input.dataset.adminImageInputKey;
+        const selectedFile = input.files?.[0];
+
+        if (!selectedFile) {
+          return;
+        }
+
+        try {
+          const dataUrl = await readFileAsDataUrl(selectedFile);
+
+          adminDraftContent.images[imageKey] = {
+            ...(adminDraftContent.images[imageKey] || {}),
+            src: dataUrl
+          };
+
+          applyAdminContent(adminDraftContent);
+
+          const previewImage = adminImageEditorList.querySelector(`[data-admin-image-preview-key="${imageKey}"]`);
+
+          if (previewImage) {
+            previewImage.setAttribute("src", dataUrl);
+          }
+
+          setAdminFeedback(
+            `${selectedFile.name} wurde geladen. Mit "Aenderungen speichern" bleibt das Bild fuer diese Vorschau erhalten.`,
+            "success"
+          );
+        } catch (error) {
+          setAdminFeedback("Das ausgewaehlte Bild konnte nicht gelesen werden.", "error");
+        }
+      });
+
+      adminImageEditorList.addEventListener("click", (event) => {
+        const resetButton = event.target.closest("[data-admin-reset-image-key]");
+
+        if (!resetButton || !adminDraftContent) {
+          return;
+        }
+
+        const imageKey = resetButton.dataset.adminResetImageKey;
+        const definition = adminImageDefinitions.find((item) => item.key === imageKey);
+
+        if (!definition) {
+          return;
+        }
+
+        adminDraftContent.images[imageKey] = {
+          ...definition.defaultValue
+        };
+
+        applyAdminContent(adminDraftContent);
+        renderAdminEditor();
+        setAdminFeedback(`${definition.label} wurde auf das Originalbild zurueckgesetzt.`, "success");
+      });
+    }
+
+    if (adminSaveButton) {
+      adminSaveButton.addEventListener("click", async () => {
+        if (!adminDraftContent) {
+          return;
+        }
+
+        adminSaveButton.disabled = true;
+
+        try {
+          finalizeInlineAdminTexts();
+          const savedContent = await saveAdminContent(adminDraftContent);
+          applyAdminContent(savedContent);
+          adminDraftContent = cloneAdminContent(savedContent);
+          setAdminFeedback("Die Aenderungen wurden zentral gespeichert und sind jetzt auf allen Geraeten sichtbar.", "success");
+          renderAdminState();
+        } catch (error) {
+          setAdminFeedback(error?.status === 401 ? "Admin-Sitzung abgelaufen. Bitte erneut einloggen." : "Speichern fehlgeschlagen.", "error");
+        } finally {
+          adminSaveButton.disabled = false;
+        }
+      });
+    }
+
+    if (adminResetButton) {
+      adminResetButton.addEventListener("click", async () => {
+        if (!window.confirm("Willst du alle Admin-Aenderungen fuer diese Testseite zuruecksetzen?")) {
+          return;
+        }
+
+        adminResetButton.disabled = true;
+
+        try {
+          const resetContent = await resetAdminContent();
+          adminDraftContent = cloneAdminContent(resetContent);
+          applyAdminContent(resetContent);
+          renderAdminState();
+          setAdminFeedback("Die Testseite wurde zentral auf den Ausgangsstand zurueckgesetzt.", "success");
+        } catch (error) {
+          setAdminFeedback(error?.status === 401 ? "Admin-Sitzung abgelaufen. Bitte erneut einloggen." : "Zuruecksetzen fehlgeschlagen.", "error");
+        } finally {
+          adminResetButton.disabled = false;
+        }
+      });
+    }
+
+    const initializePage = async () => {
+      try {
+        await loadAdminContentFromApi(false);
+      } catch (error) {
+        setAdminContentState(getDefaultAdminContent());
+      }
+
+      applyAdminContent(getAdminContentState());
+      setAuthMode("login");
+      renderAccount();
+      renderAdminState();
+      startChatPolling();
+      renderChatUi({ forceRefresh: true });
+      await hydrateAccountSession();
+      if (isAdminLoggedIn() && getStoredAdminApiToken()) {
+        try {
+          await loadAdminContentFromApi(true);
+          applyAdminContent(getAdminContentState());
+        } catch (error) {
+          setStoredAdminApiToken("");
+          setAdminSession(false);
+        }
+      }
+      renderAccount();
+      renderChatUi({ forceRefresh: true });
+    };
+
+    void initializePage();
+
+    window.addEventListener("storage", (event) => {
+      if (event.key && event.key !== CHAT_STORAGE_KEY) {
+        return;
+      }
+
+      renderChatUi({ forceRefresh: false });
+    });
+
+    prefersReducedMotion.addEventListener("change", (event) => {
+      if (!event.matches) {
+        return;
+      }
+
+      revealAll();
+
+      interactiveSurfaces.forEach((surface) => {
+        surface.style.setProperty("--glow-alpha", "0");
+      });
+
+      if (heroVisual) {
+        heroVisual.style.setProperty("--hero-shift-x", "0px");
+        heroVisual.style.setProperty("--hero-shift-y", "0px");
+      }
+    });
+  </script>
 </body>
 </html>
