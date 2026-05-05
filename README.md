@@ -1,18 +1,22 @@
 # Aestas Parfumes
 
-Static site deployment for Holidaily frontend on GitHub Pages.
+Professional static brand website for Aestas Parfumes.
 
-## Hosting
-- GitHub Pages serves static files from this repository.
-- API base is configured to:
-  `https://holidaily-pools.up.railway.app/api`
+## Stack
+- HTML + CSS + small vanilla JavaScript
+- GitHub Pages via `.github/workflows/static.yml`
 
 ## Main files
 - `index.html`
 - `styles.css`
+- `assets/logo.svg`
+- `assets/favicon.svg`
 - `impressum.html`
 - `datenschutz.html`
-- `assets/`
 
-## GitHub Pages workflow
-- `.github/workflows/static.yml`
+## Deploy
+Push to `main` and GitHub Actions deploys to GitHub Pages.
+
+## Notes
+- Contact form currently uses `mailto:`.
+- Replace legal placeholder data in `impressum.html` and `datenschutz.html` before production use.
