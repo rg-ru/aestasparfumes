@@ -1,0 +1,17 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+products = [
+    {"id": 1, "name": "AESTAS No. 01", "family": "Amber & Saffron", "price": 89},
+    {"id": 2, "name": "AESTAS No. 02", "family": "Rose Noire", "price": 95},
+    {"id": 3, "name": "AESTAS No. 03", "family": "Citrus Velours", "price": 79},
+    {"id": 4, "name": "AESTAS No. 04", "family": "Oud Blanc", "price": 109},
+]
+
+@app.route("/")
+def home():
+    return render_template("index.html", products=products)
+
+if __name__ == "__main__":
+    app.run(debug=True)
