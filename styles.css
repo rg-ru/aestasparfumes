@@ -1,0 +1,400 @@
+:root {
+  --bg: #f5f7fb;
+  --ink: #19202d;
+  --soft-ink: #576074;
+  --panel: #ffffff;
+  --line: #d8dfed;
+  --accent: #1f7a65;
+  --accent-2: #2753c5;
+  --danger: #b33a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #f5f7fb 45%, #ebf4f2 100%);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Cinzel", serif;
+  line-height: 1.15;
+}
+
+.app-shell {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 1.4rem auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcff;
+}
+
+.kicker {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0.35rem;
+}
+
+.lead {
+  margin-top: 0.45rem;
+  color: var(--soft-ink);
+  max-width: 68ch;
+}
+
+.topbar-actions {
+  text-align: right;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.meta {
+  font-size: 0.92rem;
+}
+
+.main-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.section-head {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-head p {
+  color: var(--soft-ink);
+  font-size: 0.92rem;
+}
+
+.compact {
+  margin-bottom: 0.65rem;
+}
+
+.product-form {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 0.9rem;
+}
+
+.product-form input,
+.product-form button,
+.address-form input,
+.address-form button,
+.chat-form input,
+.chat-form button,
+.support-chat-form select,
+.ghost-btn {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 2.5rem;
+  font: inherit;
+}
+
+.product-form input,
+.address-form input,
+.chat-form input,
+.support-chat-form select {
+  padding: 0 0.7rem;
+}
+
+.product-form button,
+.address-form button,
+.chat-form button {
+  border: 0;
+  background: var(--accent-2);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product-form button {
+  grid-column: 1 / -1;
+}
+
+.ghost-btn {
+  cursor: pointer;
+  background: #f4f7ff;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.product-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  background: #ffffff;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.product-body {
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.product-desc {
+  color: var(--soft-ink);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  min-height: 2.5rem;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.add-btn {
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  min-height: 2.2rem;
+  min-width: 7.25rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.cart-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.cart-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+
+.small-btn {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8faff;
+  min-width: 2rem;
+  min-height: 2rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.small-btn.remove {
+  color: var(--danger);
+  border-color: #edcfcf;
+  background: #fff7f7;
+}
+
+.cart-empty {
+  color: var(--soft-ink);
+  font-size: 0.9rem;
+}
+
+.cart-total {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+}
+
+.address-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+}
+
+.map-feedback {
+  margin: 0.55rem 0;
+  color: var(--soft-ink);
+  font-size: 0.9rem;
+}
+
+#map-frame {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+}
+
+.chat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.chat-panel {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.chat-messages {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 220px;
+  max-height: 320px;
+  overflow: auto;
+  padding: 0.55rem;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  background: #fbfcff;
+}
+
+.bubble {
+  border-radius: 8px;
+  padding: 0.48rem 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 88%;
+}
+
+.bubble.user,
+.bubble.kunde {
+  justify-self: end;
+  background: #dce7ff;
+}
+
+.bubble.assistant,
+.bubble.support {
+  justify-self: start;
+  background: #e5f6f2;
+}
+
+.chat-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+}
+
+.support-chat-form {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+@media (max-width: 1080px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: min(1240px, calc(100% - 1rem));
+    margin-top: 0.7rem;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar-actions {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+  }
+
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .address-form {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-form,
+  .support-chat-form {
+    grid-template-columns: 1fr;
+  }
+}

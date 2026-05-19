@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AESTAS Perfumes Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="kicker">AESTAS PERFUMES</p>
+        <h1>Produkte, Warenkorb, Maps und Chat</h1>
+        <p class="lead">Du kannst direkt Produkte hinzufuegen und alles lokal im Browser testen.</p>
+      </div>
+      <div class="topbar-actions">
+        <p class="meta">Artikel im Warenkorb: <strong id="cart-badge">0</strong></p>
+        <button id="clear-cart-btn" class="ghost-btn" type="button">Warenkorb leeren</button>
+      </div>
+    </header>
+
+    <div class="main-grid">
+      <section class="panel products-panel">
+        <div class="section-head">
+          <h2>Produkte</h2>
+          <p>Neue Produkte kannst du unten direkt eintragen.</p>
+        </div>
+
+        <form id="product-form" class="product-form">
+          <input id="product-name" name="name" type="text" placeholder="Produktname" required />
+          <input id="product-price" name="price" type="number" min="0" step="0.01" placeholder="Preis in EUR" required />
+          <input id="product-image" name="image" type="text" placeholder="Bild-URL oder assets/images/..." />
+          <input id="product-description" name="description" type="text" placeholder="Kurze Beschreibung" required />
+          <button type="submit">Produkt hinzufuegen</button>
+        </form>
+
+        <div id="product-grid" class="product-grid" aria-live="polite"></div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel cart-panel">
+          <div class="section-head compact">
+            <h2>Warenkorb</h2>
+          </div>
+          <ul id="cart-list" class="cart-list"></ul>
+          <p class="cart-total">Gesamt: <strong id="cart-total">0,00 EUR</strong></p>
+        </section>
+
+        <section class="panel map-panel">
+          <div class="section-head compact">
+            <h2>Adresse suchen</h2>
+            <p>Google Maps Karte wird auf die Adresse zentriert.</p>
+          </div>
+          <form id="address-form" class="address-form">
+            <input id="address-input" type="text" placeholder="z. B. Berlin Alexanderplatz" required />
+            <button type="submit">Suchen</button>
+          </form>
+          <p id="address-feedback" class="map-feedback">Aktuelle Karte: Berlin</p>
+          <iframe
+            id="map-frame"
+            title="Google Maps"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps?q=Berlin&output=embed"
+          ></iframe>
+        </section>
+      </aside>
+    </div>
+
+    <div class="chat-grid">
+      <section class="panel chat-panel">
+        <div class="section-head compact">
+          <h2>KI Chatbot</h2>
+          <p>Hilft mit Produktfragen, Warenkorb und Versandinfos.</p>
+        </div>
+        <div id="ai-chat-messages" class="chat-messages" aria-live="polite"></div>
+        <form id="ai-chat-form" class="chat-form">
+          <input id="ai-chat-input" type="text" placeholder="Frage an den KI Chatbot..." required />
+          <button type="submit">Senden</button>
+        </form>
+      </section>
+
+      <section class="panel chat-panel">
+        <div class="section-head compact">
+          <h2>Interner Support Chat</h2>
+          <p>Lokaler Verlauf fuer Kunde und Support Team.</p>
+        </div>
+        <div id="support-chat-messages" class="chat-messages" aria-live="polite"></div>
+        <form id="support-chat-form" class="chat-form support-chat-form">
+          <select id="support-role" required>
+            <option value="kunde">Kunde</option>
+            <option value="support">Support</option>
+          </select>
+          <input id="support-chat-input" type="text" placeholder="Support-Nachricht..." required />
+          <button type="submit">Senden</button>
+        </form>
+        <button id="clear-support-chat-btn" class="ghost-btn" type="button">Support-Chat leeren</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
