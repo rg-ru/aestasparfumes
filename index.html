@@ -3,91 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AESTAS Perfumes Shop</title>
+  <title>AESTAS Perfumes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="kicker">AESTAS PERFUMES</p>
-        <h1>Produkte, Warenkorb, Maps und Chat</h1>
-        <p class="lead">Du kannst direkt Produkte hinzufuegen und alles lokal im Browser testen.</p>
-      </div>
-      <div class="topbar-actions">
-        <p class="meta">Artikel im Warenkorb: <strong id="cart-badge">0</strong></p>
-        <button id="clear-cart-btn" class="ghost-btn" type="button">Warenkorb leeren</button>
-      </div>
-    </header>
+  <div class="utility-bar">
+    <p>Complimentary shipping ab 150 EUR innerhalb der EU</p>
+  </div>
 
-    <div class="main-grid">
-      <section class="panel products-panel">
-        <div class="section-head">
-          <h2>Produkte</h2>
-          <p>Neue Produkte kannst du unten direkt eintragen.</p>
-        </div>
-
-        <form id="product-form" class="product-form">
-          <input id="product-name" name="name" type="text" placeholder="Produktname" required />
-          <input id="product-price" name="price" type="number" min="0" step="0.01" placeholder="Preis in EUR" required />
-          <input id="product-image" name="image" type="text" placeholder="Bild-URL oder assets/images/..." />
-          <input id="product-description" name="description" type="text" placeholder="Kurze Beschreibung" required />
-          <button type="submit">Produkt hinzufuegen</button>
-        </form>
-
-        <div id="product-grid" class="product-grid" aria-live="polite"></div>
-      </section>
-
-      <aside class="sidebar">
-        <section class="panel cart-panel">
-          <div class="section-head compact">
-            <h2>Warenkorb</h2>
-          </div>
-          <ul id="cart-list" class="cart-list"></ul>
-          <p class="cart-total">Gesamt: <strong id="cart-total">0,00 EUR</strong></p>
-        </section>
-
-        <section class="panel map-panel">
-          <div class="section-head compact">
-            <h2>Adresse suchen</h2>
-            <p>Google Maps Karte wird auf die Adresse zentriert.</p>
-          </div>
-          <form id="address-form" class="address-form">
-            <input id="address-input" type="text" placeholder="z. B. Berlin Alexanderplatz" required />
-            <button type="submit">Suchen</button>
-          </form>
-          <p id="address-feedback" class="map-feedback">Aktuelle Karte: Berlin</p>
-          <iframe
-            id="map-frame"
-            title="Google Maps"
-            loading="lazy"
-            allowfullscreen
-            src="https://www.google.com/maps?q=Berlin&output=embed"
-          ></iframe>
-        </section>
-      </aside>
+  <header class="site-header">
+    <a href="#home" class="brand">AESTAS</a>
+    <nav class="main-nav">
+      <a href="#collections">Collections</a>
+      <a href="#catalog">Parfums</a>
+      <a href="#services">Services</a>
+      <a href="#support">Support</a>
+    </nav>
+    <div class="header-actions">
+      <button id="open-cart-btn" class="cart-btn" type="button" aria-controls="cart-drawer" aria-expanded="false">
+        <span>Warenkorb</span>
+        <strong id="cart-badge">0</strong>
+      </button>
     </div>
+  </header>
 
-    <div class="chat-grid">
-      <section class="panel chat-panel">
-        <div class="section-head compact">
-          <h2>KI Chatbot</h2>
-          <p>Hilft mit Produktfragen, Warenkorb und Versandinfos.</p>
+  <main>
+    <section class="hero" id="home">
+      <img src="assets/images/lux-hero.jpg" alt="AESTAS Signature Collection" />
+      <div class="hero-content">
+        <p class="eyebrow">Aestas Signature Collection</p>
+        <h1>Modern haute parfumerie mit klaren Linien, satten Noten und zeitlosem Charakter.</h1>
+        <a class="hero-cta" href="#catalog">Kollektion entdecken</a>
+      </div>
+    </section>
+
+    <section class="collections" id="collections">
+      <article class="collection-tile">
+        <img src="assets/images/lux-collection-1.jpg" alt="Collection Velvet Editions" />
+        <div class="collection-content">
+          <p class="eyebrow">Collection</p>
+          <h2>Velvet Editions</h2>
+          <a href="#catalog">Jetzt ansehen</a>
+        </div>
+      </article>
+      <article class="collection-tile">
+        <img src="assets/images/lux-collection-2.jpg" alt="Collection Citrus Atelier" />
+        <div class="collection-content">
+          <p class="eyebrow">Collection</p>
+          <h2>Citrus Atelier</h2>
+          <a href="#catalog">Jetzt ansehen</a>
+        </div>
+      </article>
+      <article class="collection-tile">
+        <img src="assets/images/img-16.jpg" alt="Collection Evening Signature" />
+        <div class="collection-content">
+          <p class="eyebrow">Collection</p>
+          <h2>Evening Signature</h2>
+          <a href="#catalog">Jetzt ansehen</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="section-head">
+        <p class="eyebrow">Editions</p>
+        <h2>Parfum Kollektion</h2>
+        <p>Produkte lassen sich direkt im Formular erweitern und erscheinen sofort im Katalog.</p>
+      </div>
+
+      <form id="product-form" class="product-form">
+        <input id="product-name" name="name" type="text" placeholder="Produktname" required />
+        <input id="product-price" name="price" type="number" min="0" step="0.01" placeholder="Preis in EUR" required />
+        <input id="product-image" name="image" type="text" placeholder="Bild-URL oder assets/images/..." />
+        <input id="product-description" name="description" type="text" placeholder="Kurze Beschreibung" required />
+        <button type="submit">Produkt hinzufuegen</button>
+      </form>
+
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="service-pane">
+        <div class="pane-head">
+          <p class="eyebrow">Boutique Finder</p>
+          <h3>Adresse und Map</h3>
+        </div>
+        <form id="address-form" class="address-form">
+          <input id="address-input" type="text" placeholder="z. B. Berlin Alexanderplatz" required />
+          <button type="submit">Suchen</button>
+        </form>
+        <p id="address-feedback" class="map-feedback">Aktuelle Karte: Berlin</p>
+        <iframe
+          id="map-frame"
+          title="Google Maps"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps?q=Berlin&output=embed"
+        ></iframe>
+      </div>
+
+      <div class="service-pane">
+        <div class="pane-head">
+          <p class="eyebrow">AI Concierge</p>
+          <h3>KI Chatbot</h3>
         </div>
         <div id="ai-chat-messages" class="chat-messages" aria-live="polite"></div>
         <form id="ai-chat-form" class="chat-form">
           <input id="ai-chat-input" type="text" placeholder="Frage an den KI Chatbot..." required />
           <button type="submit">Senden</button>
         </form>
-      </section>
+      </div>
 
-      <section class="panel chat-panel">
-        <div class="section-head compact">
-          <h2>Interner Support Chat</h2>
-          <p>Lokaler Verlauf fuer Kunde und Support Team.</p>
+      <div class="service-pane" id="support">
+        <div class="pane-head">
+          <p class="eyebrow">Internal Desk</p>
+          <h3>Interner Support Chat</h3>
         </div>
         <div id="support-chat-messages" class="chat-messages" aria-live="polite"></div>
         <form id="support-chat-form" class="chat-form support-chat-form">
@@ -99,9 +132,32 @@
           <button type="submit">Senden</button>
         </form>
         <button id="clear-support-chat-btn" class="ghost-btn" type="button">Support-Chat leeren</button>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div>
+      <p class="eyebrow">Aestas Perfumes</p>
+      <p>Haute parfumerie fuer Alltag und Abend.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#catalog">Shop</a>
+      <a href="#services">Services</a>
+    </nav>
+  </footer>
+
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-head">
+      <h3>Warenkorb</h3>
+      <button id="close-cart-btn" class="icon-btn" type="button" aria-label="Warenkorb schliessen">&times;</button>
+    </div>
+    <ul id="cart-list" class="cart-list"></ul>
+    <p class="cart-total">Gesamt: <strong id="cart-total">0,00 EUR</strong></p>
+    <button id="clear-cart-btn" class="ghost-btn" type="button">Warenkorb leeren</button>
+  </aside>
+  <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
 
   <script src="script.js"></script>
 </body>

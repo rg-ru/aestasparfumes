@@ -7,32 +7,32 @@ const STORAGE_KEYS = {
 
 const DEFAULT_PRODUCTS = [
   {
-    id: "p-amber",
-    name: "Amber Dusk",
-    description: "Warmer Duft mit Vanille, Amber und Tonkabohne.",
-    price: 89.0,
-    image: "assets/images/img-01.jpg",
+    id: "p-velvet-elixir",
+    name: "Velvet Elixir",
+    description: "Amber, safran und ein ruhiger Vanille-Akkord fur Abendstunden.",
+    price: 149.0,
+    image: "assets/images/lux-collection-1.jpg",
   },
   {
-    id: "p-citrus",
-    name: "Citrus Bloom",
-    description: "Frische Zitrusnoten mit leichter gruner Tee-Basis.",
-    price: 59.0,
-    image: "assets/images/img-15.jpg",
+    id: "p-erba-luce",
+    name: "Erba Luce",
+    description: "Frische Zitrusnoten mit weicher Moschus-Basis.",
+    price: 128.0,
+    image: "assets/images/lux-collection-2.jpg",
   },
   {
-    id: "p-noir",
-    name: "Velvet Noir",
-    description: "Dunkler Abendduft mit Oud, Gewurzen und Holz.",
-    price: 109.0,
+    id: "p-notte-nero",
+    name: "Notte Nero",
+    description: "Tiefes Holzprofil mit Oud und dunklen Gewurzen.",
+    price: 169.0,
     image: "assets/images/img-16.jpg",
   },
   {
-    id: "p-ocean",
-    name: "Ocean Light",
-    description: "Sauberer, aquatischer Duft fur den Alltag.",
-    price: 64.0,
-    image: "assets/images/img-17.jpg",
+    id: "p-cashmere-air",
+    name: "Cashmere Air",
+    description: "Leichter Tagesduft mit iris, tee und cleanen Noten.",
+    price: 112.0,
+    image: "assets/images/img-15.jpg",
   },
 ];
 
@@ -43,6 +43,10 @@ const productPriceInput = document.getElementById("product-price");
 const productImageInput = document.getElementById("product-image");
 const productDescriptionInput = document.getElementById("product-description");
 
+const cartDrawer = document.getElementById("cart-drawer");
+const openCartBtn = document.getElementById("open-cart-btn");
+const closeCartBtn = document.getElementById("close-cart-btn");
+const drawerBackdrop = document.getElementById("drawer-backdrop");
 const cartList = document.getElementById("cart-list");
 const cartTotal = document.getElementById("cart-total");
 const cartBadge = document.getElementById("cart-badge");
@@ -68,7 +72,7 @@ let cart = loadFromStorage(STORAGE_KEYS.cart, []);
 let aiMessages = loadFromStorage(STORAGE_KEYS.aiChat, [
   {
     role: "assistant",
-    text: "Hallo, ich bin der KI Chatbot. Frag mich zu Produkten, Preisen, Versand oder deinem Warenkorb.",
+    text: "Willkommen bei AESTAS. Ich helfe dir mit Duftempfehlungen, Preisen und Versand.",
   },
 ]);
 let supportMessages = loadFromStorage(STORAGE_KEYS.supportChat, []);
@@ -94,20 +98,32 @@ function formatEUR(value) {
 
 function normalizeImageUrl(rawValue) {
   const value = rawValue.trim();
-  if (!value) return "assets/images/img-01.jpg";
+  if (!value) return "assets/images/lux-collection-1.jpg";
   if (value.startsWith("assets/")) return value;
   try {
     const url = new URL(value);
-    if (url.protocol === "https:" || url.protocol === "http:") {
-      return url.toString();
-    }
+    if (url.protocol === "https:" || url.protocol === "http:") return url.toString();
   } catch {
-    return "assets/images/img-01.jpg";
+    return "assets/images/lux-collection-1.jpg";
   }
-  return "assets/images/img-01.jpg";
+  return "assets/images/lux-collection-1.jpg";
+}
+
+function setCartDrawer(open) {
+  if (!cartDrawer || !drawerBackdrop || !openCartBtn) return;
+  cartDrawer.classList.toggle("open", open);
+  cartDrawer.setAttribute("aria-hidden", open ? "false" : "true");
+  openCartBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  drawerBackdrop.hidden = !open;
+  document.body.style.overflow = open ? "hidden" : "";
+}
+
+function findProduct(productId) {
+  return products.find((product) => product.id === productId);
 }
 
 function renderProducts() {
+  if (!productGrid) return;
   productGrid.innerHTML = "";
 
   products.forEach((product) => {
@@ -140,7 +156,7 @@ function renderProducts() {
     const addButton = document.createElement("button");
     addButton.type = "button";
     addButton.className = "add-btn";
-    addButton.textContent = "In den Warenkorb";
+    addButton.textContent = "Add to Cart";
     addButton.dataset.productId = product.id;
 
     row.appendChild(price);
@@ -149,7 +165,6 @@ function renderProducts() {
     body.appendChild(title);
     body.appendChild(description);
     body.appendChild(row);
-
     card.appendChild(image);
     card.appendChild(body);
 
@@ -157,39 +172,8 @@ function renderProducts() {
   });
 }
 
-function findProduct(productId) {
-  return products.find((product) => product.id === productId);
-}
-
-function addToCart(productId) {
-  const existingItem = cart.find((item) => item.productId === productId);
-  if (existingItem) {
-    existingItem.qty += 1;
-  } else {
-    cart.push({ productId, qty: 1 });
-  }
-  saveToStorage(STORAGE_KEYS.cart, cart);
-  renderCart();
-}
-
-function updateCartQuantity(productId, delta) {
-  const item = cart.find((entry) => entry.productId === productId);
-  if (!item) return;
-  item.qty += delta;
-  if (item.qty <= 0) {
-    cart = cart.filter((entry) => entry.productId !== productId);
-  }
-  saveToStorage(STORAGE_KEYS.cart, cart);
-  renderCart();
-}
-
-function removeFromCart(productId) {
-  cart = cart.filter((entry) => entry.productId !== productId);
-  saveToStorage(STORAGE_KEYS.cart, cart);
-  renderCart();
-}
-
 function renderCart() {
+  if (!cartList || !cartTotal || !cartBadge) return;
   cartList.innerHTML = "";
 
   if (cart.length === 0) {
@@ -263,10 +247,8 @@ function renderCart() {
 
     rowBottom.appendChild(qty);
     rowBottom.appendChild(actions);
-
     line.appendChild(rowTop);
     line.appendChild(rowBottom);
-
     cartList.appendChild(line);
   });
 
@@ -274,7 +256,36 @@ function renderCart() {
   cartBadge.textContent = String(totalItems);
 }
 
+function addToCart(productId) {
+  const existingItem = cart.find((item) => item.productId === productId);
+  if (existingItem) {
+    existingItem.qty += 1;
+  } else {
+    cart.push({ productId, qty: 1 });
+  }
+  saveToStorage(STORAGE_KEYS.cart, cart);
+  renderCart();
+}
+
+function updateCartQuantity(productId, delta) {
+  const item = cart.find((entry) => entry.productId === productId);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) {
+    cart = cart.filter((entry) => entry.productId !== productId);
+  }
+  saveToStorage(STORAGE_KEYS.cart, cart);
+  renderCart();
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter((entry) => entry.productId !== productId);
+  saveToStorage(STORAGE_KEYS.cart, cart);
+  renderCart();
+}
+
 function renderAiMessages() {
+  if (!aiChatMessages) return;
   aiChatMessages.innerHTML = "";
   aiMessages.forEach((message) => {
     const bubble = document.createElement("div");
@@ -290,19 +301,17 @@ function getAIBotReply(userText) {
   const hasProducts = products.length > 0;
 
   if (text.includes("versand") || text.includes("lieferung")) {
-    return "Standardversand dauert 2-4 Werktage. Expressversand kannst du spater als Checkout-Option ergaenzen.";
+    return "Standardversand dauert 2-4 Werktage. Expressversand kann als Checkout-Option aktiviert werden.";
   }
   if (text.includes("preis") || text.includes("kosten")) {
     if (!hasProducts) return "Aktuell sind noch keine Produkte hinterlegt.";
     const prices = products.map((product) => product.price);
-    const min = Math.min(...prices);
-    const max = Math.max(...prices);
-    return `Aktuell liegen die Preise zwischen ${formatEUR(min)} und ${formatEUR(max)}.`;
+    return `Der aktuelle Preisrahmen liegt bei ${formatEUR(Math.min(...prices))} bis ${formatEUR(Math.max(...prices))}.`;
   }
   if (text.includes("empfehl") || text.includes("duft")) {
-    if (!hasProducts) return "Sobald Produkte angelegt sind, kann ich dir passende Empfehlungen geben.";
+    if (!hasProducts) return "Sobald Produkte angelegt sind, kann ich dir konkrete Empfehlungen geben.";
     const suggestion = products[Math.floor(Math.random() * products.length)];
-    return `Meine Empfehlung: ${suggestion.name} (${formatEUR(suggestion.price)}). ${suggestion.description}`;
+    return `Empfehlung: ${suggestion.name} fuer ${formatEUR(suggestion.price)}. ${suggestion.description}`;
   }
   if (text.includes("warenkorb")) {
     const items = cart.reduce((sum, entry) => sum + entry.qty, 0);
@@ -313,12 +322,13 @@ function getAIBotReply(userText) {
     return `Im Warenkorb sind ${items} Artikel mit Gesamtwert ${formatEUR(total)}.`;
   }
   if (text.includes("adresse") || text.includes("maps") || text.includes("karte")) {
-    return "Nutze das Feld 'Adresse suchen'. Die Karte aktualisiert sich direkt fur die eingegebene Adresse.";
+    return "Nutze das Feld im Bereich Boutique Finder, die Karte zentriert sich direkt auf die eingegebene Adresse.";
   }
-  return "Ich kann bei Produkten, Preisen, Versand und Warenkorb helfen. Frag mich kurz und konkret.";
+  return "Ich helfe zu Duftprofilen, Preisen, Versand, Adresse und Warenkorb.";
 }
 
 function renderSupportMessages() {
+  if (!supportChatMessages) return;
   supportChatMessages.innerHTML = "";
   if (supportMessages.length === 0) {
     const info = document.createElement("div");
@@ -337,7 +347,7 @@ function renderSupportMessages() {
   supportChatMessages.scrollTop = supportChatMessages.scrollHeight;
 }
 
-productForm.addEventListener("submit", (event) => {
+productForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const name = productNameInput.value.trim();
@@ -361,13 +371,13 @@ productForm.addEventListener("submit", (event) => {
   productForm.reset();
 });
 
-productGrid.addEventListener("click", (event) => {
+productGrid?.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-product-id]");
   if (!button) return;
   addToCart(button.dataset.productId);
 });
 
-cartList.addEventListener("click", (event) => {
+cartList?.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-action]");
   if (!button) return;
 
@@ -377,13 +387,29 @@ cartList.addEventListener("click", (event) => {
   if (action === "remove") removeFromCart(productId);
 });
 
-clearCartBtn.addEventListener("click", () => {
+clearCartBtn?.addEventListener("click", () => {
   cart = [];
   saveToStorage(STORAGE_KEYS.cart, cart);
   renderCart();
 });
 
-addressForm.addEventListener("submit", (event) => {
+openCartBtn?.addEventListener("click", () => {
+  setCartDrawer(true);
+});
+
+closeCartBtn?.addEventListener("click", () => {
+  setCartDrawer(false);
+});
+
+drawerBackdrop?.addEventListener("click", () => {
+  setCartDrawer(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setCartDrawer(false);
+});
+
+addressForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const query = addressInput.value.trim();
   if (!query) return;
@@ -391,7 +417,7 @@ addressForm.addEventListener("submit", (event) => {
   addressFeedback.textContent = `Aktuelle Karte: ${query}`;
 });
 
-aiChatForm.addEventListener("submit", (event) => {
+aiChatForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const message = aiChatInput.value.trim();
   if (!message) return;
@@ -403,7 +429,7 @@ aiChatForm.addEventListener("submit", (event) => {
   aiChatForm.reset();
 });
 
-supportChatForm.addEventListener("submit", (event) => {
+supportChatForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const text = supportChatInput.value.trim();
   if (!text) return;
@@ -414,7 +440,7 @@ supportChatForm.addEventListener("submit", (event) => {
   supportChatForm.reset();
 });
 
-clearSupportChatBtn.addEventListener("click", () => {
+clearSupportChatBtn?.addEventListener("click", () => {
   supportMessages = [];
   saveToStorage(STORAGE_KEYS.supportChat, supportMessages);
   renderSupportMessages();
@@ -424,3 +450,4 @@ renderProducts();
 renderCart();
 renderAiMessages();
 renderSupportMessages();
+setCartDrawer(false);
